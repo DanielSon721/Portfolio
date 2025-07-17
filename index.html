@@ -4,42 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Daniel Son</title>
+    <link rel="stylesheet" href="style.css" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      html,
-      body {
-        margin: 0;
-        padding: 0;
-        background: black;
-        color: white;
-        font-family: "Fira Code", monospace;
-        overflow-x: hidden;
-      }
-
-      canvas {
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 0;
-        width: 100vw;
-        height: 100vh;
-        background: black;
-        display: block;
-      }
-
-      .content-wrapper {
-        position: relative;
-        z-index: 10;
-      }
-
-      .matrix-text {
-        color: #0f0;
-        font-size: 60px;
-        font-family: monospace;
-        white-space: nowrap;
-        text-shadow: 0 0 10px #0f0, 0 0 20px #0f0, 0 0 30px #0f0;
-      }
-    </style>
   </head>
   <body>
     <canvas id="canvas"></canvas>
@@ -50,16 +16,17 @@
         class="h-screen flex flex-col justify-center items-center text-center"
       >
         <h1 class="matrix-text">Daniel Son</h1>
-        <img
-          src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&pause=1500&color=00FF00&center=true&vCenter=true&width=500&lines=Cybersecurity+Enthusiast;Software+Engineer;University+of+Maryland;Computer+Science+and+Mathematics"
-          alt="Typing Animation"
-          class="mt-4"
-        />
+        <div class="mt-4 typing-shadow">
+          <img
+            src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&pause=1500&color=FFFFFF&center=true&vCenter=true&width=500&lines=Cybersecurity+Enthusiast;Software+Engineer;University+of+Maryland;Computer+Science+and+Mathematics"
+            alt="Typing Animation"
+          />
+        </div>
       </div>
 
       <!-- Socials -->
       <div
-        class="flex flex-wrap justify-center gap-4 my-8 bg-black/70 p-4 rounded-xl max-w-3xl mx-auto"
+        class="flex flex-wrap justify-center gap-4 my-8 bg-black/80 p-4 rounded-xl max-w-3xl mx-auto"
       >
         <a href="https://github.com/username" target="_blank">
           <img
@@ -81,7 +48,7 @@
       <!-- Toolkit Section -->
       <div class="my-12 px-4">
         <div
-          class="bg-black/70 rounded-2xl shadow-lg p-6 max-w-6xl mx-auto text-center"
+          class="bg-black/80 rounded-2xl shadow-lg p-6 max-w-6xl mx-auto text-center"
         >
           <h2 class="text-3xl font-bold mb-6">💼 My Toolkit</h2>
 
@@ -157,7 +124,7 @@
       <!-- Featured Projects -->
       <div class="my-12 px-4">
         <div
-          class="bg-black/70 rounded-2xl shadow-lg p-6 max-w-6xl mx-auto text-center"
+          class="bg-black/80 rounded-2xl shadow-lg p-6 max-w-6xl mx-auto text-center"
         >
           <h2 class="text-3xl font-bold mb-6">🚀 Featured Projects</h2>
           <div class="flex flex-wrap justify-center gap-4">
@@ -198,7 +165,7 @@
       <!-- Certifications -->
       <div class="my-12 px-4">
         <div
-          class="bg-black/70 rounded-2xl shadow-lg p-6 max-w-4xl mx-auto text-center"
+          class="bg-black/80 rounded-2xl shadow-lg p-6 max-w-4xl mx-auto text-center"
         >
           <h2 class="text-3xl font-bold mb-6">📜 Certifications</h2>
           <div class="flex flex-wrap justify-center gap-4">
@@ -225,66 +192,25 @@
       <!-- GitHub Analytics -->
       <div class="my-12 px-4">
         <div
-          class="bg-black/70 rounded-2xl shadow-lg p-6 max-w-5xl mx-auto text-center"
+          class="bg-black/80 rounded-2xl shadow-lg p-6 max-w-5xl mx-auto text-center"
         >
           <h2 class="text-3xl font-bold mb-6">📊 GitHub Analytics</h2>
           <div class="flex flex-wrap justify-center gap-6">
             <img
-              height="165"
+              class="h-[165px] w-auto"
               src="https://github-readme-stats.vercel.app/api?username=danielson721&show_icons=true&theme=tokyonight&include_all_commits=true"
+              alt="GitHub Stats"
             />
             <img
-              height="165"
+              class="h-[165px] w-auto"
               src="https://github-readme-stats.vercel.app/api/top-langs/?username=danielson721&layout=compact&theme=tokyonight"
+              alt="Top Languages"
             />
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Matrix Rain Script -->
-    <script type="module">
-      const canvas = document.getElementById("canvas");
-      const ctx = canvas.getContext("2d");
-
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-
-      let letters =
-        "ㄱㄴㄷㄹㅁㅂㅅㅇㅈㅊㅋㅌㅍㅎㅏㅑㅓㅕㅗㅛㅜㅠㅡㅣABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789αβθλμΞπΣφψΩ".split(
-          ""
-        );
-      let fontSize = 14;
-      let columns = canvas.width / fontSize;
-      let drops = new Array(Math.floor(columns)).fill(1);
-
-      function draw() {
-        ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-        ctx.fillStyle = "#0f0";
-        ctx.font = fontSize + "px monospace";
-
-        for (let i = 0; i < drops.length; i++) {
-          const text = letters[Math.floor(Math.random() * letters.length)];
-          ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-
-          if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-            drops[i] = 0;
-          }
-
-          drops[i]++;
-        }
-      }
-
-      setInterval(draw, 50);
-
-      window.addEventListener("resize", () => {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-        columns = canvas.width / fontSize;
-        drops = new Array(Math.floor(columns)).fill(1);
-      });
-    </script>
+    <script type="module" src="matrix.js"></script>
   </body>
 </html>

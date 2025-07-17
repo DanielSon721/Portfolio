@@ -1,0 +1,37 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: black;
+  color: white;
+  font-family: "Fira Code", monospace;
+  overflow-x: hidden;
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  display: block;
+}
+
+.content-wrapper {
+  position: relative;
+  z-index: 10;
+}
+
+.matrix-text {
+  color: white;
+  font-size: 60px;
+  font-family: monospace;
+  white-space: nowrap;
+  text-shadow: 0 0 10px #0f0, 0 0 20px #0f0, 0 0 30px #0f0;
+}
+
+.typing-shadow {
+  filter: drop-shadow(0 0 6px #0f0) drop-shadow(0 0 12px #0f0);
+}
