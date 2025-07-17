@@ -18,7 +18,7 @@
 
       .header-container {
         position: relative;
-        height: 100vh;
+        height: 75vh;
         overflow: hidden;
       }
 
@@ -76,7 +76,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        animation: glitch 2s infinite;
+        animation: glitch 4s infinite;
         color: #0f0;
         white-space: nowrap;
         text-shadow: 0 0 5px #0f0, 0 0 15px #0f0;
@@ -98,6 +98,30 @@
           transform: translate(2px, 2px);
         }
       }
+
+      .matrix-canvas {
+        position: absolute;
+        top: 75vh;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        pointer-events: none;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background: #000;
+      }
+
+      section {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+      }
     </style>
   </head>
   <body>
@@ -115,247 +139,217 @@
       </div>
     </div>
 
+    <!-- Matrix Rain Canvas -->
+    <canvas id="matrixCanvas" class="matrix-canvas"></canvas>
+
     <!-- Main Content -->
-    <div class="p-8 max-w-5xl mx-auto space-y-10">
-      <!-- Contact -->
-      <!-- Socials -->
-      <hr class="border-gray-700" />
-      <h3 class="text-center text-2xl">📡 Socials</h3>
-      <div class="flex justify-center flex-wrap gap-4">
-        <a
-          href="https://www.linkedin.com/in/daniel-son-720950260/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <button
-            class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 font-medium rounded-lg text-sm px-5 py-2.5"
-          >
-            LinkedIn
-          </button>
-        </a>
-        <a
-          href="mailto:djson721@gmail.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <button
-            class="text-white bg-gradient-to-r from-red-500 via-red-600 to-red-700 hover:bg-gradient-to-br focus:ring-4 focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 font-medium rounded-lg text-sm px-5 py-2.5"
-          >
-            Gmail
-          </button>
-        </a>
-      </div>
+    <div class="p-8 max-w-6xl mx-auto space-y-10 relative z-10 text-white">
+      <!-- Socials Section -->
+      <section>
+        <h3 class="text-center text-2xl">📡 Socials</h3>
+        <div class="flex flex-wrap justify-center gap-4 mt-4">
+          <a href="https://github.com/dnl-son" target="_blank">
+            <img
+              src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"
+            />
+          </a>
+          <a href="mailto:dnlson@umd.edu" target="_blank">
+            <img
+              src="https://img.shields.io/badge/Email-dnlson@umd.edu-red?style=for-the-badge&logo=gmail&logoColor=white"
+            />
+          </a>
+          <a href="https://www.linkedin.com/in/dnl-son/" target="_blank">
+            <img
+              src="https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white"
+            />
+          </a>
+        </div>
+      </section>
 
-      <!-- Toolkit -->
-      <hr class="border-gray-700" />
-      <h3 class="text-center text-2xl">💼 My Toolkit</h3>
+      <!-- Toolkit Section -->
+      <section>
+        <h3 class="text-center text-3xl mb-6">💼 My Toolkit</h3>
 
-      <!-- Languages -->
-      <h4 class="text-center text-xl">🌎 Languages</h4>
-      <div class="flex justify-center flex-wrap gap-4">
-        <button
-          class="bg-gradient-to-r from-yellow-500 to-yellow-700 text-white px-4 py-2 rounded-lg text-sm"
-        >
-          Python
-        </button>
-        <button
-          class="bg-gradient-to-r from-orange-500 to-orange-700 text-white px-4 py-2 rounded-lg text-sm"
-        >
-          Java
-        </button>
-        <button
-          class="bg-gradient-to-r from-blue-700 to-blue-900 text-white px-4 py-2 rounded-lg text-sm"
-        >
-          C
-        </button>
-        <button
-          class="bg-gradient-to-r from-gray-800 to-black text-white px-4 py-2 rounded-lg text-sm"
-        >
-          Rust
-        </button>
-        <button
-          class="bg-gradient-to-r from-orange-400 to-orange-600 text-white px-4 py-2 rounded-lg text-sm"
-        >
-          OCaml
-        </button>
-        <button
-          class="bg-gradient-to-r from-red-800 to-red-900 text-white px-4 py-2 rounded-lg text-sm"
-        >
-          Assembly
-        </button>
-      </div>
+        <h4 class="text-xl text-center mb-2">🌎 Languages</h4>
+        <div class="flex flex-wrap justify-center gap-2 mb-6">
+          <img
+            src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"
+          />
+          <img
+            src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white"
+          />
+          <img
+            src="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white"
+          />
+          <img
+            src="https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white"
+          />
+          <img
+            src="https://img.shields.io/badge/OCaml-EC6813?style=for-the-badge&logo=ocaml&logoColor=white"
+          />
+          <img
+            src="https://img.shields.io/badge/Assembly-8E0E00?style=for-the-badge&logo=assemblyscript&logoColor=white"
+          />
+        </div>
 
-      <!-- Operating Systems -->
-      <h4 class="text-center text-xl">🖥️ Operating Systems</h4>
-      <div class="flex justify-center flex-wrap gap-4">
-        <button
-          class="bg-gradient-to-r from-gray-900 to-black text-white px-4 py-2 rounded-lg text-sm"
-        >
-          macOS
-        </button>
-        <button
-          class="bg-gradient-to-r from-blue-500 to-blue-700 text-white px-4 py-2 rounded-lg text-sm"
-        >
-          Windows
-        </button>
-        <button
-          class="bg-gradient-to-r from-yellow-400 to-yellow-600 text-black px-4 py-2 rounded-lg text-sm"
-        >
-          Linux
-        </button>
-        <button
-          class="bg-gradient-to-r from-blue-300 to-blue-500 text-white px-4 py-2 rounded-lg text-sm"
-        >
-          Kali Linux
-        </button>
-      </div>
+        <h4 class="text-xl text-center mb-2">🖥️ Operating Systems</h4>
+        <div class="flex flex-wrap justify-center gap-2 mb-6">
+          <img
+            src="https://img.shields.io/badge/mac%20os-000000?style=for-the-badge&logo=apple&logoColor=white"
+          />
+          <img
+            src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white"
+          />
+          <img
+            src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black"
+          />
+          <img
+            src="https://img.shields.io/badge/Kali_Linux-557C94?style=for-the-badge&logo=kali-linux&logoColor=white"
+          />
+        </div>
 
-      <!-- Cybersecurity Tools -->
-      <h4 class="text-center text-xl">🛡️ Cybersecurity Tools</h4>
-      <div class="flex justify-center flex-wrap gap-4">
-        <button
-          class="bg-gradient-to-r from-orange-400 to-orange-600 text-white px-4 py-2 rounded-lg text-sm"
-        >
-          Nmap
-        </button>
-        <button
-          class="bg-gradient-to-r from-blue-400 to-blue-600 text-white px-4 py-2 rounded-lg text-sm"
-        >
-          Wireshark
-        </button>
-        <button
-          class="bg-gradient-to-r from-pink-500 to-pink-700 text-white px-4 py-2 rounded-lg text-sm"
-        >
-          Metasploit
-        </button>
-        <button
-          class="bg-gradient-to-r from-gray-600 to-gray-800 text-white px-4 py-2 rounded-lg text-sm"
-        >
-          VMware
-        </button>
-      </div>
+        <h4 class="text-xl text-center mb-2">🛡️ Cybersecurity Tools</h4>
+        <div class="flex flex-wrap justify-center gap-2 mb-6">
+          <img
+            src="https://img.shields.io/badge/Nmap-FF6600?style=for-the-badge&logo=Nmap&logoColor=white"
+          />
+          <img
+            src="https://img.shields.io/badge/Wireshark-1679A7?style=for-the-badge&logo=wireshark&logoColor=white"
+          />
+          <img
+            src="https://img.shields.io/badge/Metasploit-EA2C59?style=for-the-badge"
+          />
+          <img
+            src="https://img.shields.io/badge/VMware-607078?style=for-the-badge&logo=vmware&logoColor=white"
+          />
+        </div>
 
-      <!-- Development Tools -->
-      <h4 class="text-center text-xl">🛠️ Development Tools</h4>
-      <div class="flex justify-center flex-wrap gap-4">
-        <button
-          class="bg-gradient-to-r from-blue-400 to-blue-600 text-white px-4 py-2 rounded-lg text-sm"
-        >
-          VS Code
-        </button>
-        <button
-          class="bg-gradient-to-r from-gray-800 to-black text-white px-4 py-2 rounded-lg text-sm"
-        >
-          GitHub
-        </button>
-        <button
-          class="bg-gradient-to-r from-red-500 to-red-700 text-white px-4 py-2 rounded-lg text-sm"
-        >
-          Git
-        </button>
-      </div>
+        <h4 class="text-xl text-center mb-2">🛠️ Development Tools</h4>
+        <div class="flex flex-wrap justify-center gap-2">
+          <img
+            src="https://img.shields.io/badge/VSCode-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white"
+          />
+          <img
+            src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"
+          />
+          <img
+            src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white"
+          />
+        </div>
+      </section>
 
-      <!-- Projects -->
-      <hr class="border-gray-700" />
-      <h3 class="text-center text-2xl">🚀 Featured Projects</h3>
-      <div class="flex flex-wrap justify-center gap-4">
-        <a
-          href="https://github.com/DanielSon721/Why-I-Love-Cybersecurity"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            src="https://github-readme-stats.vercel.app/api/pin/?username=danielson721&repo=Why-I-Love-Cybersecurity&theme=tokyonight"
-          />
-        </a>
-        <a
-          href="https://github.com/DanielSon721/OCaml-Interpreter"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            src="https://github-readme-stats.vercel.app/api/pin/?username=danielson721&repo=OCaml-Interpreter&theme=tokyonight"
-          />
-        </a>
-        <a
-          href="https://github.com/DanielSon721/Auto-Messenger"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            src="https://github-readme-stats.vercel.app/api/pin/?username=danielson721&repo=Auto-Messenger&theme=tokyonight"
-          />
-        </a>
-        <a
-          href="https://github.com/DanielSon721/Hacking-Tools"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            src="https://github-readme-stats.vercel.app/api/pin/?username=danielson721&repo=Hacking-Tools&theme=tokyonight"
-          />
-        </a>
-        <a
-          href="https://github.com/DanielSon721/Unix-Shell"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            src="https://github-readme-stats.vercel.app/api/pin/?username=danielson721&repo=Unix-Shell&theme=tokyonight"
-          />
-        </a>
-        <a
-          href="https://github.com/DanielSon721/Texas-Hold-em-Poker"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            src="https://github-readme-stats.vercel.app/api/pin/?username=danielson721&repo=Texas-Hold-em-Poker&theme=tokyonight"
-          />
-        </a>
-      </div>
+      <!-- Featured Projects -->
+      <section>
+        <h3 class="text-center text-3xl mb-6">🚀 Featured Projects</h3>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="https://github.com/DanielSon721/Why-I-Love-Cybersecurity">
+            <img
+              src="https://github-readme-stats.vercel.app/api/pin/?username=danielson721&repo=Why-I-Love-Cybersecurity&theme=tokyonight"
+            />
+          </a>
+          <a href="https://github.com/DanielSon721/OCaml-Interpreter">
+            <img
+              src="https://github-readme-stats.vercel.app/api/pin/?username=danielson721&repo=OCaml-Interpreter&theme=tokyonight"
+            />
+          </a>
+          <a href="https://github.com/DanielSon721/Auto-Messenger">
+            <img
+              src="https://github-readme-stats.vercel.app/api/pin/?username=danielson721&repo=Auto-Messenger&theme=tokyonight"
+            />
+          </a>
+          <a href="https://github.com/DanielSon721/Hacking-Tools">
+            <img
+              src="https://github-readme-stats.vercel.app/api/pin/?username=danielson721&repo=Hacking-Tools&theme=tokyonight"
+            />
+          </a>
+          <a href="https://github.com/DanielSon721/Unix-Shell">
+            <img
+              src="https://github-readme-stats.vercel.app/api/pin/?username=danielson721&repo=Unix-Shell&theme=tokyonight"
+            />
+          </a>
+          <a href="https://github.com/DanielSon721/Texas-Hold-em-Poker">
+            <img
+              src="https://github-readme-stats.vercel.app/api/pin/?username=danielson721&repo=Texas-Hold-em-Poker&theme=tokyonight"
+            />
+          </a>
+        </div>
+      </section>
 
       <!-- Certifications -->
-      <hr class="border-gray-700" />
-      <h3 class="text-center text-2xl">📜 Certifications</h3>
-      <div class="flex justify-center flex-wrap gap-4">
-        <a
-          href="https://www.credly.com/badges/6bc1b1ee-c569-4b9a-9c18-75e2a44e1c8c/public_url"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <button
-            class="bg-gradient-to-r from-blue-500 to-blue-700 text-white px-4 py-2 rounded-lg text-sm"
+      <section>
+        <h3 class="text-center text-3xl mb-6">📜 Certifications</h3>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a
+            href="https://www.credly.com/badges/6bc1b1ee-c569-4b9a-9c18-75e2a44e1c8c/public_url"
           >
-            Google Cybersecurity
-          </button>
-        </a>
-        <a
-          href="https://www.credly.com/badges/44600edd-a72d-4115-bc9d-9077239cdb00/public_url"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <button
-            class="bg-gradient-to-r from-red-700 to-red-900 text-white px-4 py-2 rounded-lg text-sm"
+            <img
+              src="https://img.shields.io/badge/Google_Cybersecurity-4285F4?style=for-the-badge&logo=google&logoColor=white"
+            />
+          </a>
+          <a
+            href="https://www.credly.com/badges/44600edd-a72d-4115-bc9d-9077239cdb00/public_url"
           >
-            CompTIA Security+
-          </button>
-        </a>
-      </div>
+            <img
+              src="https://img.shields.io/badge/CompTIA_Security+-D50000?style=for-the-badge&logo=comptia&logoColor=white"
+            />
+          </a>
+        </div>
+      </section>
 
       <!-- GitHub Stats -->
-      <hr class="border-gray-700" />
-      <h3 class="text-center text-2xl">📊 GitHub Analytics</h3>
-      <div class="flex justify-center flex-wrap gap-6">
-        <img
-          height="165"
-          src="https://github-readme-stats.vercel.app/api?username=danielson721&show_icons=true&theme=tokyonight&include_all_commits=true"
-        />
-        <img
-          height="165"
-          src="https://github-readme-stats.vercel.app/api/top-langs/?username=danielson721&layout=compact&theme=tokyonight"
-        />
-      </div>
+      <section>
+        <h3 class="text-center text-3xl mb-6">📊 GitHub Analytics</h3>
+        <div class="flex flex-wrap justify-center gap-4">
+          <img
+            height="165"
+            src="https://github-readme-stats.vercel.app/api?username=danielson721&show_icons=true&theme=tokyonight&include_all_commits=true"
+          />
+          <img
+            height="165"
+            src="https://github-readme-stats.vercel.app/api/top-langs/?username=danielson721&layout=compact&theme=tokyonight"
+          />
+        </div>
+      </section>
     </div>
+
+    <!-- Matrix Rain Script -->
+    <script>
+      const canvas = document.getElementById("matrixCanvas");
+      const ctx = canvas.getContext("2d");
+
+      function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = document.body.scrollHeight;
+      }
+
+      resizeCanvas();
+      window.addEventListener("resize", resizeCanvas);
+
+      const letters = "ABCDEFGHIJKLMNOPQRSTUVXYZ".repeat(6).split("");
+      const fontSize = 10;
+      const columns = Math.floor(window.innerWidth / fontSize);
+      const drops = Array(columns).fill(1);
+      const speedFactor = 0.5;
+
+      function draw() {
+        ctx.fillStyle = "rgba(0, 0, 0, 0.1)";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.font = fontSize + "px monospace";
+
+        for (let i = 0; i < drops.length; i++) {
+          const text = letters[Math.floor(Math.random() * letters.length)];
+          ctx.fillStyle = "#0f0";
+          ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+          if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+            drops[i] = 0;
+          }
+
+          drops[i] += speedFactor;
+        }
+      }
+
+      setInterval(draw, 50);
+    </script>
   </body>
 </html>
