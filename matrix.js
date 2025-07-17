@@ -5,7 +5,7 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 let letters =
-  "ㄱㄴㄷㄹㅁㅂㅅㅇㅈㅊㅋㅌㅍㅎㅏㅑㅓㅕㅗㅛㅜㅠㅡㅣABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789αβθλμΞπΣφψΩ".split(
+  "ㄱㄴㄷㄹㅁㅂㅅㅇㅈㅊㅋㅌㅍㅎㅏㅑㅓㅕㅗㅛㅜㅠㅡㅣABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789αβθλμΞΣφψΩ".split(
     ""
   );
 
