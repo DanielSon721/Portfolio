@@ -36,7 +36,7 @@ function copyEmail(event) {
   event.preventDefault();
   const email = "djson721@gmail.com";
   navigator.clipboard.writeText(email).then(() => {
-    showCopiedMessage("Email copied to clipboard!");
+    showCopiedMessage("Copied to clipboard!");
   });
 }
 
@@ -47,11 +47,10 @@ function showCopiedMessage(message) {
   msgDiv.style.top = "50%";
   msgDiv.style.left = "50%";
   msgDiv.style.transform = "translate(-50%, -50%)";
-  msgDiv.style.background = "#1f2937"; // Tailwind gray-800
+  msgDiv.style.background = "#32435aff"; // Tailwind gray-800
   msgDiv.style.color = "white";
   msgDiv.style.padding = "12px 24px";
   msgDiv.style.borderRadius = "10px";
-  msgDiv.style.boxShadow = "0 0 20px rgba(0, 255, 0, 0.4)";
   msgDiv.style.zIndex = 9999;
   msgDiv.style.opacity = "0";
   msgDiv.style.transition = "opacity 0.3s ease";
