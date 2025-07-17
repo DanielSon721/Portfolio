@@ -32,6 +32,41 @@ function draw() {
   }
 }
 
+function copyEmail(event) {
+  event.preventDefault();
+  const email = "djson721@gmail.com";
+  navigator.clipboard.writeText(email).then(() => {
+    showCopiedMessage("Email copied to clipboard!");
+  });
+}
+
+function showCopiedMessage(message) {
+  const msgDiv = document.createElement("div");
+  msgDiv.textContent = message;
+  msgDiv.style.position = "fixed";
+  msgDiv.style.top = "50%";
+  msgDiv.style.left = "50%";
+  msgDiv.style.transform = "translate(-50%, -50%)";
+  msgDiv.style.background = "#1f2937"; // Tailwind gray-800
+  msgDiv.style.color = "white";
+  msgDiv.style.padding = "12px 24px";
+  msgDiv.style.borderRadius = "10px";
+  msgDiv.style.boxShadow = "0 0 20px rgba(0, 255, 0, 0.4)";
+  msgDiv.style.zIndex = 9999;
+  msgDiv.style.opacity = "0";
+  msgDiv.style.transition = "opacity 0.3s ease";
+
+  document.body.appendChild(msgDiv);
+  requestAnimationFrame(() => {
+    msgDiv.style.opacity = "1";
+  });
+
+  setTimeout(() => {
+    msgDiv.style.opacity = "0";
+    setTimeout(() => document.body.removeChild(msgDiv), 300);
+  }, 2000);
+}
+
 setInterval(draw, 50);
 
 window.addEventListener("resize", () => {
