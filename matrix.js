@@ -5,9 +5,10 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 let letters =
-  "ㄱㄴㄷㄹㅁㅂㅅㅇㅈㅊㅋㅌㅍㅎㅏㅑㅓㅕㅗㅛㅜㅠㅡㅣABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789αβθλμΞΣφψΩ".split(
+  "ㄱㄴㄷㄹㅁㅂㅅㅇㅈㅊㅋㅌㅍㅎㅏㅑㅓㅕㅗㅛㅜㅠㅡㅣ".split(
     ""
   );
+  //ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789αβθλμΞΣφψΩ
 
 let fontSize = 14;
 let columns = canvas.width / fontSize;
