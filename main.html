@@ -16,162 +16,74 @@
         overflow-x: hidden;
       }
 
-      .header-container {
-        position: relative;
-        height: 75vh;
-        overflow: hidden;
-      }
-
-      .rain-background {
-        position: absolute;
+      canvas {
+        position: fixed;
         top: 0;
         left: 0;
-        width: 100%;
-        height: 100%;
-        background: repeating-linear-gradient(
-          0deg,
-          rgba(0, 255, 0, 0.1) 0,
-          rgba(0, 255, 0, 0.2) 2px,
-          transparent 4px
-        );
-        animation: rain 10s linear infinite;
         z-index: 0;
-        pointer-events: none;
+        width: 100vw;
+        height: 100vh;
+        background: black;
+        display: block;
       }
 
-      @keyframes rain {
-        0% {
-          transform: translateY(-100%);
-        }
-        100% {
-          transform: translateY(100%);
-        }
-      }
-
-      .matrix-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        height: 100%;
-        text-align: center;
+      .content-wrapper {
         position: relative;
-        z-index: 2;
+        z-index: 10;
       }
 
       .matrix-text {
         color: #0f0;
         font-size: 60px;
         font-family: monospace;
-        position: relative;
         white-space: nowrap;
         text-shadow: 0 0 10px #0f0, 0 0 20px #0f0, 0 0 30px #0f0;
-        z-index: 2;
-      }
-
-      .matrix-text::before {
-        content: attr(data-text);
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        animation: glitch 4s infinite;
-        color: #0f0;
-        white-space: nowrap;
-        text-shadow: 0 0 5px #0f0, 0 0 15px #0f0;
-        pointer-events: none;
-      }
-
-      @keyframes glitch {
-        0%,
-        100% {
-          clip-path: inset(0 0 0 0);
-          transform: translate(0);
-        }
-        33% {
-          clip-path: inset(10% 0 85% 0);
-          transform: translate(-2px, -2px);
-        }
-        66% {
-          clip-path: inset(85% 0 5% 0);
-          transform: translate(2px, 2px);
-        }
-      }
-
-      .matrix-canvas {
-        position: absolute;
-        top: 75vh;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 0;
-        pointer-events: none;
-      }
-
-      * {
-        margin: 0;
-        padding: 0;
-      }
-
-      body {
-        background: #000;
-      }
-
-      section {
-        padding-top: 4rem;
-        padding-bottom: 4rem;
       }
     </style>
   </head>
   <body>
-    <!-- Header -->
-    <div class="header-container">
-      <div class="rain-background"></div>
-      <div class="matrix-container">
-        <h1 class="matrix-text" data-text="Daniel Son">Daniel Son</h1>
-        <div align="center" style="margin-top: 10px; z-index: 2">
-          <img
-            src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&pause=1500&color=00FF00&center=true&vCenter=true&width=500&lines=Cybersecurity+Enthusiast;Software+Engineer;University+of+Maryland;Computer+Science+and+Mathematics"
-            alt="Typing Animation"
-          />
-        </div>
+    <!-- Matrix Canvas -->
+    <canvas id="canvas"></canvas>
+
+    <!-- Content -->
+    <div class="content-wrapper">
+      <!-- Header -->
+      <div
+        class="h-screen flex flex-col justify-center items-center text-center"
+      >
+        <h1 class="matrix-text">Daniel Son</h1>
+        <img
+          src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&pause=1500&color=00FF00&center=true&vCenter=true&width=500&lines=Cybersecurity+Enthusiast;Software+Engineer;University+of+Maryland;Computer+Science+and+Mathematics"
+          alt="Typing Animation"
+          class="mt-4"
+        />
       </div>
-    </div>
 
-    <!-- Matrix Rain Canvas -->
-    <canvas id="matrixCanvas" class="matrix-canvas"></canvas>
-
-    <!-- Main Content -->
-    <div class="p-8 max-w-6xl mx-auto space-y-10 relative z-10 text-white">
-      <!-- Socials Section -->
-      <section>
-        <h3 class="text-center text-2xl">📡 Socials</h3>
-        <div class="flex flex-wrap justify-center gap-4 mt-4">
-          <a href="https://github.com/dnl-son" target="_blank">
-            <img
-              src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"
-            />
-          </a>
-          <a href="mailto:dnlson@umd.edu" target="_blank">
-            <img
-              src="https://img.shields.io/badge/Email-dnlson@umd.edu-red?style=for-the-badge&logo=gmail&logoColor=white"
-            />
-          </a>
-          <a href="https://www.linkedin.com/in/dnl-son/" target="_blank">
-            <img
-              src="https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white"
-            />
-          </a>
-        </div>
-      </section>
+      <!-- Socials -->
+      <div class="flex flex-wrap justify-center gap-4 my-8">
+        <a href="https://github.com/username" target="_blank">
+          <img
+            src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"
+          />
+        </a>
+        <a href="https://linkedin.com/in/username" target="_blank">
+          <img
+            src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"
+          />
+        </a>
+        <a href="mailto:example@example.com">
+          <img
+            src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white"
+          />
+        </a>
+      </div>
 
       <!-- Toolkit Section -->
-      <section>
-        <h3 class="text-center text-3xl mb-6">💼 My Toolkit</h3>
+      <div class="my-12 text-center">
+        <h2 class="text-3xl font-bold mb-6">💼 My Toolkit</h2>
 
-        <h4 class="text-xl text-center mb-2">🌎 Languages</h4>
-        <div class="flex flex-wrap justify-center gap-2 mb-6">
+        <h3 class="text-2xl font-semibold mb-2">🌎 Languages</h3>
+        <div class="flex flex-wrap justify-center gap-3 mb-6">
           <img
             src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"
           />
@@ -192,8 +104,8 @@
           />
         </div>
 
-        <h4 class="text-xl text-center mb-2">🖥️ Operating Systems</h4>
-        <div class="flex flex-wrap justify-center gap-2 mb-6">
+        <h3 class="text-2xl font-semibold mb-2">🖥️ Operating Systems</h3>
+        <div class="flex flex-wrap justify-center gap-3 mb-6">
           <img
             src="https://img.shields.io/badge/mac%20os-000000?style=for-the-badge&logo=apple&logoColor=white"
           />
@@ -208,8 +120,8 @@
           />
         </div>
 
-        <h4 class="text-xl text-center mb-2">🛡️ Cybersecurity Tools</h4>
-        <div class="flex flex-wrap justify-center gap-2 mb-6">
+        <h3 class="text-2xl font-semibold mb-2">🛡️ Cybersecurity Tools</h3>
+        <div class="flex flex-wrap justify-center gap-3 mb-6">
           <img
             src="https://img.shields.io/badge/Nmap-FF6600?style=for-the-badge&logo=Nmap&logoColor=white"
           />
@@ -224,8 +136,8 @@
           />
         </div>
 
-        <h4 class="text-xl text-center mb-2">🛠️ Development Tools</h4>
-        <div class="flex flex-wrap justify-center gap-2">
+        <h3 class="text-2xl font-semibold mb-2">🛠️ Development Tools</h3>
+        <div class="flex flex-wrap justify-center gap-3">
           <img
             src="https://img.shields.io/badge/VSCode-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white"
           />
@@ -236,11 +148,11 @@
             src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white"
           />
         </div>
-      </section>
+      </div>
 
       <!-- Featured Projects -->
-      <section>
-        <h3 class="text-center text-3xl mb-6">🚀 Featured Projects</h3>
+      <div class="my-12 text-center">
+        <h2 class="text-3xl font-bold mb-6">🚀 Featured Projects</h2>
         <div class="flex flex-wrap justify-center gap-4">
           <a href="https://github.com/DanielSon721/Why-I-Love-Cybersecurity">
             <img
@@ -273,14 +185,15 @@
             />
           </a>
         </div>
-      </section>
+      </div>
 
       <!-- Certifications -->
-      <section>
-        <h3 class="text-center text-3xl mb-6">📜 Certifications</h3>
+      <div class="my-12 text-center">
+        <h2 class="text-3xl font-bold mb-6">📜 Certifications</h2>
         <div class="flex flex-wrap justify-center gap-4">
           <a
             href="https://www.credly.com/badges/6bc1b1ee-c569-4b9a-9c18-75e2a44e1c8c/public_url"
+            target="_blank"
           >
             <img
               src="https://img.shields.io/badge/Google_Cybersecurity-4285F4?style=for-the-badge&logo=google&logoColor=white"
@@ -288,18 +201,19 @@
           </a>
           <a
             href="https://www.credly.com/badges/44600edd-a72d-4115-bc9d-9077239cdb00/public_url"
+            target="_blank"
           >
             <img
               src="https://img.shields.io/badge/CompTIA_Security+-D50000?style=for-the-badge&logo=comptia&logoColor=white"
             />
           </a>
         </div>
-      </section>
+      </div>
 
-      <!-- GitHub Stats -->
-      <section>
-        <h3 class="text-center text-3xl mb-6">📊 GitHub Analytics</h3>
-        <div class="flex flex-wrap justify-center gap-4">
+      <!-- GitHub Analytics -->
+      <div class="my-12 text-center">
+        <h2 class="text-3xl font-bold mb-6">📊 GitHub Analytics</h2>
+        <div class="flex flex-wrap justify-center gap-6">
           <img
             height="165"
             src="https://github-readme-stats.vercel.app/api?username=danielson721&show_icons=true&theme=tokyonight&include_all_commits=true"
@@ -309,47 +223,52 @@
             src="https://github-readme-stats.vercel.app/api/top-langs/?username=danielson721&layout=compact&theme=tokyonight"
           />
         </div>
-      </section>
+      </div>
     </div>
 
     <!-- Matrix Rain Script -->
-    <script>
-      const canvas = document.getElementById("matrixCanvas");
+    <script type="module">
+      const canvas = document.getElementById("canvas");
       const ctx = canvas.getContext("2d");
 
-      function resizeCanvas() {
-        canvas.width = window.innerWidth;
-        canvas.height = document.body.scrollHeight;
-      }
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
 
-      resizeCanvas();
-      window.addEventListener("resize", resizeCanvas);
-
-      const letters = "ABCDEFGHIJKLMNOPQRSTUVXYZ".repeat(6).split("");
-      const fontSize = 10;
-      const columns = Math.floor(window.innerWidth / fontSize);
-      const drops = Array(columns).fill(1);
-      const speedFactor = 0.5;
+      let letters =
+        "アァイィウヴエエオカガキギクグケゲコゴサザシジスズセゼソゾタダチッヂヅテデトドナニヌネノハバパヒビピフブプヘベペホボポマミムメモヤユヨラリルレロワヲンABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789".split(
+          ""
+        );
+      let fontSize = 14;
+      let columns = canvas.width / fontSize;
+      let drops = new Array(Math.floor(columns)).fill(1);
 
       function draw() {
-        ctx.fillStyle = "rgba(0, 0, 0, 0.1)";
+        ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
         ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        ctx.fillStyle = "#0f0";
         ctx.font = fontSize + "px monospace";
 
         for (let i = 0; i < drops.length; i++) {
           const text = letters[Math.floor(Math.random() * letters.length)];
-          ctx.fillStyle = "#0f0";
           ctx.fillText(text, i * fontSize, drops[i] * fontSize);
 
           if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
             drops[i] = 0;
           }
 
-          drops[i] += speedFactor;
+          drops[i]++;
         }
       }
 
       setInterval(draw, 50);
+
+      window.addEventListener("resize", () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        columns = canvas.width / fontSize;
+        drops = new Array(Math.floor(columns)).fill(1);
+      });
     </script>
   </body>
 </html>
