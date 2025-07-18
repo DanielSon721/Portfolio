@@ -92,3 +92,33 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const sample = urlParams.get('sample');
+  
+  // Don't try to show PDF viewer for the GitHub-linked sample
+  if (sample && sample !== 'Why-I-Love-Cybersecurity') {
+    // Show the PDF viewer and hide the grid
+    document.getElementById('samples-grid').classList.add('hidden');
+    document.getElementById('pdf-viewer-section').classList.remove('hidden');
+    
+    // Set the PDF source
+    document.getElementById('pdf-viewer').src = `writing/${sample}.pdf`;
+    
+    // Update the page title
+    document.title = `Daniel Son - ${getSampleTitle(sample)}`;
+  }
+});
+
+function getSampleTitle(sample) {
+  const titles = {
+    'machines': 'Machines Do Think... Kind Of',
+    'platovsmlk': 'Plato vs. Martin Luther King Jr.',
+    'cherryhill': 'Cherry Hill Urban Community Garden',
+    'gymculture': 'Damaging Consequences of Toxic Gym Culture',
+    'commonapp': 'Common App Essay',
+    'america': 'America: The Nation Builder'
+  };
+  return titles[sample] || 'Writing Sample';
+}

@@ -3,9 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Daniel Son</title>
+    <title>Daniel Son - Writing Samples</title>
     <link rel="stylesheet" href="style.css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.12.313/pdf.min.js"></script>
   </head>
   <body>
     <header id="scroll-header" class="matrix-header">
@@ -21,147 +22,193 @@
     <canvas id="canvas"></canvas>
 
     <div class="content-wrapper">
-      <!-- Header -->
-      <div
-        class="h-screen flex flex-col justify-center items-center text-center"
-      >
-        <h1 class="matrix-text">Writing Samples</h1>
-        <div class="mt-4 typing-shadow">
-          <img
-            src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&pause=1500&color=FFFFFF&center=true&vCenter=true&width=500&
-            lines=
-            Essays I'm proud of"
-            alt="Typing Animation"
-          />
+      <!-- PDF Viewer Section -->
+      <div id="pdf-viewer-section" class="hidden my-6 px-4">
+        <div class="black-box">
+          <div class="text-center my-6">
+            <a href="writing.html" class="neon-button">Back to All Samples</a>
+          </div>
+          <div class="flex justify-center">
+            <iframe id="pdf-viewer" class="pdf-container"></iframe>
+          </div>
         </div>
       </div>
 
-      <!-- Combined Black Box Section -->
-      <div class="my-12 px-4">
-        <div class="bg-black/80 rounded-2xl shadow-lg p-6 max-w-6xl mx-auto">
-          <!-- Socials at the top -->
-          <br />
-          <!-- Go Back Button (now outside the black box) -->
-          <div class="text-center my-6">
-            <a href="index.html" class="neon-button">Home</a>
+      <!-- Main Writing Samples Grid -->
+      <div id="samples-grid">
+        <div
+          class="h-screen flex flex-col justify-center items-center text-center"
+        >
+          <h1 class="matrix-text">Writing Samples</h1>
+          <div class="mt-4 typing-shadow">
+            <img
+              src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&pause=1500&color=FFFFFF&center=true&vCenter=true&width=500&
+              lines=
+              Essays I'm proud of"
+              alt="Typing Animation"
+            />
           </div>
+        </div>
 
-          <br />
+        <div class="my-12 px-4">
+          <div class="bg-black/80 rounded-2xl shadow-lg p-6 max-w-6xl mx-auto">
+            <br />
+            <div class="text-center my-6">
+              <a href="index.html" class="neon-button">Home</a>
+            </div>
+            <br />
 
-          <!-- Writing Samples grid -->
-          <div
-            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mb-8"
-          >
             <div
-              class="bg-gray-800/70 p-4 rounded-lg hover:scale-[1.02] transition-transform"
+              class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mb-8"
             >
-              <a
-                href="https://github.com/DanielSon721/Why-I-Love-Cybersecurity"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="block"
+              <!-- Update all links to use URL parameters -->
+              <div
+                class="bg-gray-800/70 p-4 rounded-lg hover:scale-[1.02] transition-transform"
               >
-                <h3 class="text-xl font-bold mb-2">Why I Love Cybersecurity</h3>
-                <p class="text-gray-400 mb-3">A mosquitoe essay</p>
-                <span class="text-xs bg-blue-400 px-2 py-1 rounded"
-                  >July 5, 2025</span
+                <a
+                  href="https://github.com/DanielSon721/Why-I-Love-Cybersecurity"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="block"
                 >
-              </a>
-            </div>
+                  <h3 class="text-xl font-bold mb-2">
+                    Why I Love Cybersecurity
+                  </h3>
+                  <p class="text-gray-400 mb-3">A mosquitoe essay</p>
+                  <span class="text-xs bg-blue-400 px-2 py-1 rounded"
+                    >July 5, 2025</span
+                  >
+                </a>
+              </div>
 
-            <div
-              class="bg-gray-800/70 p-4 rounded-lg hover:scale-[1.02] transition-transform"
-            >
-              <a href="machines.html" class="block">
-                <h3 class="text-xl font-bold mb-2">
-                  Machines Do Think... Kind Of
-                </h3>
-                <p class="text-gray-400 mb-3">Do machines actually think?</p>
-                <span class="text-xs bg-blue-400 px-2 py-1 rounded"
-                  >Apr 25, 2025</span
-                >
-              </a>
-            </div>
+              <div
+                class="bg-gray-800/70 p-4 rounded-lg hover:scale-[1.02] transition-transform"
+              >
+                <a href="writing.html?sample=machines" class="block">
+                  <h3 class="text-xl font-bold mb-2">
+                    Machines Do Think... Kind Of
+                  </h3>
+                  <p class="text-gray-400 mb-3">Do machines actually think?</p>
+                  <span class="text-xs bg-blue-400 px-2 py-1 rounded"
+                    >Apr 25, 2025</span
+                  >
+                </a>
+              </div>
 
-            <div
-              class="bg-gray-800/70 p-4 rounded-lg hover:scale-[1.02] transition-transform"
-            >
-              <a href="platovsmlk.html" class="block">
-                <h3 class="text-xl font-bold mb-2">
-                  Plato vs. Martin Luther King Jr.
-                </h3>
-                <p class="text-gray-400 mb-3">
-                  An argument for civil disobedience
-                </p>
-                <span class="text-xs bg-blue-400 px-2 py-1 rounded"
-                  >Feb 28, 2025</span
-                >
-              </a>
-            </div>
+              <div
+                class="bg-gray-800/70 p-4 rounded-lg hover:scale-[1.02] transition-transform"
+              >
+                <a href="writing.html?sample=platovsmlk" class="block">
+                  <h3 class="text-xl font-bold mb-2">
+                    Plato vs. Martin Luther King Jr.
+                  </h3>
+                  <p class="text-gray-400 mb-3">
+                    An argument for civil disobedience
+                  </p>
+                  <span class="text-xs bg-blue-400 px-2 py-1 rounded"
+                    >Feb 28, 2025</span
+                  >
+                </a>
+              </div>
 
-            <div
-              class="bg-gray-800/70 p-4 rounded-lg hover:scale-[1.02] transition-transform"
-            >
-              <a href="cherryhill.html" class="block">
-                <h3 class="text-xl font-bold mb-2">
-                  Cherry Hill Urban Community Garden
-                </h3>
-                <p class="text-gray-400 mb-3">A case study</p>
-                <span class="text-xs bg-blue-400 px-2 py-1 rounded"
-                  >Oct 20, 2024</span
-                >
-              </a>
-            </div>
+              <div
+                class="bg-gray-800/70 p-4 rounded-lg hover:scale-[1.02] transition-transform"
+              >
+                <a href="writing.html?sample=cherryhill" class="block">
+                  <h3 class="text-xl font-bold mb-2">
+                    Cherry Hill Urban Community Garden
+                  </h3>
+                  <p class="text-gray-400 mb-3">A case study</p>
+                  <span class="text-xs bg-blue-400 px-2 py-1 rounded"
+                    >Oct 20, 2024</span
+                  >
+                </a>
+              </div>
 
-            <div
-              class="bg-gray-800/70 p-4 rounded-lg hover:scale-[1.02] transition-transform"
-            >
-              <a href="gymculture.html" class="block">
-                <h3 class="text-xl font-bold mb-2">
-                  Damaging Consequences of Toxic Gym Culture
-                </h3>
-                <p class="text-gray-400 mb-3">
-                  A close look at modern gym culture
-                </p>
-                <span class="text-xs bg-blue-400 px-2 py-1 rounded"
-                  >Nov 26, 2023</span
-                >
-              </a>
-            </div>
+              <div
+                class="bg-gray-800/70 p-4 rounded-lg hover:scale-[1.02] transition-transform"
+              >
+                <a href="writing.html?sample=gymculture" class="block">
+                  <h3 class="text-xl font-bold mb-2">
+                    Damaging Consequences of Toxic Gym Culture
+                  </h3>
+                  <p class="text-gray-400 mb-3">
+                    A close look at modern gym culture
+                  </p>
+                  <span class="text-xs bg-blue-400 px-2 py-1 rounded"
+                    >Nov 26, 2023</span
+                  >
+                </a>
+              </div>
 
-            <div
-              class="bg-gray-800/70 p-4 rounded-lg hover:scale-[1.02] transition-transform"
-            >
-              <a href="commonapp.html" class="block">
-                <h3 class="text-xl font-bold mb-2">Common App Essay</h3>
-                <p class="text-gray-400 mb-3">My style journey</p>
-                <span class="text-xs bg-blue-400 px-2 py-1 rounded"
-                  >Oct 1, 2022</span
-                >
-              </a>
-            </div>
+              <div
+                class="bg-gray-800/70 p-4 rounded-lg hover:scale-[1.02] transition-transform"
+              >
+                <a href="writing.html?sample=commonapp" class="block">
+                  <h3 class="text-xl font-bold mb-2">Common App Essay</h3>
+                  <p class="text-gray-400 mb-3">My style journey</p>
+                  <span class="text-xs bg-blue-400 px-2 py-1 rounded"
+                    >Oct 1, 2022</span
+                  >
+                </a>
+              </div>
 
-            <div
-              class="bg-gray-800/70 p-4 rounded-lg hover:scale-[1.02] transition-transform"
-            >
-              <a href="america.html" class="block">
-                <h3 class="text-xl font-bold mb-2">
-                  America: The Nation Builder
-                </h3>
-                <p class="text-gray-400 mb-3">
-                  Understanding Japan's reconstruction post WWII
-                </p>
-                <span class="text-xs bg-blue-400 px-2 py-1 rounded"
-                  >June 3, 2022</span
-                >
-              </a>
+              <div
+                class="bg-gray-800/70 p-4 rounded-lg hover:scale-[1.02] transition-transform"
+              >
+                <a href="writing.html?sample=america" class="block">
+                  <h3 class="text-xl font-bold mb-2">
+                    America: The Nation Builder
+                  </h3>
+                  <p class="text-gray-400 mb-3">
+                    Understanding Japan's reconstruction post WWII
+                  </p>
+                  <span class="text-xs bg-blue-400 px-2 py-1 rounded"
+                    >June 3, 2022</span
+                  >
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <script type="module" src="matrix.js"></script>
     <script src="matrix.js"></script>
+    <script>
+      // Handle URL parameters when page loads
+      document.addEventListener("DOMContentLoaded", function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        const sample = urlParams.get("sample");
+
+        if (sample) {
+          // Show the PDF viewer and hide the grid
+          document.getElementById("samples-grid").classList.add("hidden");
+          document
+            .getElementById("pdf-viewer-section")
+            .classList.remove("hidden");
+
+          // Set the PDF source
+          document.getElementById("pdf-viewer").src = `writing/${sample}.pdf`;
+
+          // Update the page title
+          document.title = `Daniel Son - ${getSampleTitle(sample)}`;
+        }
+      });
+
+      // Helper function to get proper titles for each sample
+      function getSampleTitle(sample) {
+        const titles = {
+          "Why-I-Love-Cybersecurity": "Why I Love Cybersecurity",
+          machines: "Machines Do Think... Kind Of",
+          platovsmlk: "Plato vs. Martin Luther King Jr.",
+          cherryhill: "Cherry Hill Urban Community Garden",
+          gymculture: "Damaging Consequences of Toxic Gym Culture",
+          commonapp: "Common App Essay",
+          america: "America: The Nation Builder",
+        };
+        return titles[sample] || "Writing Sample";
+      }
+    </script>
   </body>
 </html>
