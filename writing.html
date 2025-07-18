@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daniel Son</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <header id="scroll-header" class="matrix-header">
+      <div class="matrix-scanline"></div>
+      <nav class="matrix-nav">
+        <a href="aboutme.html" class="matrix-link">About Me</a>
+        <a href="writing.html" class="matrix-link">Writing Samples</a>
+      </nav>
+      <a href="index.html" class="matrix-glow">Daniel Son</a>
+    </header>
+
+    <canvas id="canvas"></canvas>
+
+    <div class="content-wrapper">
+      <!-- Header -->
+      <div
+        class="h-screen flex flex-col justify-center items-center text-center"
+      >
+        <h1 class="matrix-text">Writing Samples</h1>
+        <div class="mt-4 typing-shadow">
+          <img
+            src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&pause=1500&color=FFFFFF&center=true&vCenter=true&width=500&
+            lines=
+            Essays I'm proud of"
+            alt="Typing Animation"
+          />
+        </div>
+      </div>
+
+      <!-- Combined Black Box Section -->
+      <div class="my-12 px-4">
+        <div class="bg-black/80 rounded-2xl shadow-lg p-6 max-w-6xl mx-auto">
+          <!-- Socials at the top -->
+          <br />
+          <!-- Go Back Button (now outside the black box) -->
+          <div class="text-center my-6">
+            <a href="index.html" class="neon-button">Home</a>
+          </div>
+
+          <br />
+
+          <!-- Writing Samples grid -->
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8"
+          >
+            <!-- Sample 1 -->
+            <div
+              class="bg-gray-800/70 p-4 rounded-lg hover:scale-[1.02] transition-transform"
+            >
+              <a
+                href="https://github.com/DanielSon721/Why-I-Love-Cybersecurity"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="block"
+              >
+                <h3 class="text-xl font-bold mb-2">
+                  Why I Love Cybersecurity<br /><br />
+                </h3>
+                <p class="text-gray-400 mb-3">A mosquitoe essay<br /><br /></p>
+                <span class="text-xs bg-blue-400 px-2 py-1 rounded"
+                  >English</span
+                >
+              </a>
+            </div>
+
+            <!-- Sample 2 -->
+            <div
+              class="bg-gray-800/70 p-4 rounded-lg hover:scale-[1.02] transition-transform"
+            >
+              <a href="machines.html" class="block">
+                <h3 class="text-xl font-bold mb-2">
+                  Machines Do Think... Kind Of
+                </h3>
+                <p class="text-gray-400 mb-3">
+                  Do machines actually think?<br /><br />
+                </p>
+                <span class="text-xs bg-blue-400 px-2 py-1 rounded"
+                  >English</span
+                >
+              </a>
+            </div>
+
+            <!-- Sample 3 -->
+            <div
+              class="bg-gray-800/70 p-4 rounded-lg hover:scale-[1.02] transition-transform"
+            >
+              <a href="gymculture.html" class="block">
+                <h3 class="text-xl font-bold mb-2">
+                  The Damaging Consequences of Toxic Gym Culture
+                </h3>
+                <p class="text-gray-400 mb-3">
+                  A close look at modern gym culture
+                </p>
+                <span class="text-xs bg-blue-400 px-2 py-1 rounded"
+                  >English</span
+                >
+              </a>
+            </div>
+
+            <!-- Sample 4 -->
+            <div
+              class="bg-gray-800/70 p-4 rounded-lg hover:scale-[1.02] transition-transform"
+            >
+              <a href="america.html" class="block">
+                <h3 class="text-xl font-bold mb-2">
+                  America: The Nation Builder
+                </h3>
+                <p class="text-gray-400 mb-3">
+                  Understanding Japan's reconstruction post WWII
+                </p>
+                <span class="text-xs bg-blue-400 px-2 py-1 rounded"
+                  >English</span
+                >
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="matrix.js"></script>
+    <script src="matrix.js"></script>
+  </body>
+</html>

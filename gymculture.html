@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daniel Son</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Add PDF.js library for PDF rendering -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.12.313/pdf.min.js"></script>
+  </head>
+  <body>
+    <canvas id="canvas"></canvas>
+
+    <br />
+
+    <div class="content-wrapper">
+      <!-- Black Box Section with PDF Viewer -->
+      <div class="my-6 px-4">
+        <div class="black-box">
+          <!-- Go Back Button (now outside the black box) -->
+          <div class="text-center my-6">
+            <a href="writing.html" class="neon-button">Go Back</a>
+          </div>
+          <!-- PDF Display -->
+          <div class="flex justify-center">
+            <iframe src="writing/gymculture.pdf" class="pdf-container"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="matrix.js"></script>
+    <script src="matrix.js"></script>
+  </body>
+</html>

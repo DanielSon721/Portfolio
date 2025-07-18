@@ -75,3 +75,20 @@ window.addEventListener("resize", () => {
   columns = canvas.width / fontSize;
   drops = new Array(Math.floor(columns)).fill(1);
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const scrollHeader = document.getElementById("scroll-header");
+
+  // Show header if already scrolled down on load
+  if (window.scrollY > 100) {
+    scrollHeader.classList.add("visible");
+  }
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 100) {
+      scrollHeader.classList.add("visible");
+    } else {
+      scrollHeader.classList.remove("visible");
+    }
+  });
+});
