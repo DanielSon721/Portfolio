@@ -22,23 +22,18 @@ canvas {
 .content-wrapper {
   position: relative;
   z-index: 10;
-  padding-top: 60px;
 }
 
 .matrix-text {
   color: white;
-  font-size: 2.5rem;
+  font-size: 60px;
   font-family: monospace;
+  white-space: nowrap;
   text-shadow: 0 0 10px #0f0, 0 0 20px #0f0, 0 0 30px #0f0;
 }
 
 .typing-shadow {
   filter: drop-shadow(0 0 6px #0f0) drop-shadow(0 0 12px #0f0);
-}
-
-.typing-shadow img {
-  max-width: 100%;
-  height: auto;
 }
 
 @keyframes matrixFlicker {
@@ -57,17 +52,14 @@ canvas {
   background-color: rgba(0, 0, 0, 1);
   color: #39ff14;
   font-weight: bold;
-  font-size: 1rem;
-  padding: 0.5rem;
+  font-size: 1.25rem;
+  padding: 0.75rem 1.5rem;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
   z-index: 50;
   transform: translateY(-100%);
   transition: transform 0.7s ease;
   overflow: hidden;
   border-bottom: 1px solid #39ff14;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .matrix-header.visible {
@@ -115,44 +107,44 @@ canvas {
     0 0 10px #39ff14, 
     0 0 15px #39ff14;
   animation: matrixFlicker 3s infinite ease-in-out;
-  margin-top: 0.5rem;
-  font-size: 1.1rem;
 }
 
 .matrix-nav {
-  margin-bottom: 0.5rem;
-  display: none;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.matrix-nav.active {
-  display: flex;
+  display: inline-block;
+  margin-right: 2rem;
 }
 
 .matrix-link {
   color: #39ff14;
   text-decoration: none;
-  margin: 0 0.5rem 0.5rem;
-  font-size: 0.9rem;
+  margin-right: 1.5rem;
+  font-size: 1rem;
   position: relative;
   text-shadow: 0 0 2px #39ff14;
   transition: all 0.3s ease;
-  min-width: 44px;
-  min-height: 44px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .matrix-link:hover {
   text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14;
 }
 
+.matrix-link:last-child {
+  margin-right: 0;
+}
+
+.matrix-header {
+  display: flex;
+  align-items: center;
+}
+
+.matrix-glow {
+  margin-left: auto;
+}
+
 /* PDF Container Styles */
 .pdf-container {
   width: 100%;
-  height: 60vh;
+  height: 800px;
   border: none;
 }
 
@@ -170,11 +162,6 @@ canvas {
   letter-spacing: 1px;
   transition: all 0.3s ease;
   box-shadow: 0 0 10px rgba(0, 255, 0, 0.5), 0 0 20px rgba(0, 255, 0, 0.3);
-  min-width: 44px;
-  min-height: 44px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .neon-button:hover {
@@ -188,7 +175,7 @@ canvas {
   background-color: rgba(0, 0, 0, 0.8);
   border-radius: 1rem;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  padding: 1rem;
+  padding: 1.5rem;
   max-width: 80rem;
   margin-left: auto;
   margin-right: auto;
@@ -199,85 +186,25 @@ canvas {
   display: none;
 }
 
-/* Mobile menu button */
-.mobile-menu-btn {
-  display: none;
-  z-index: 100;
-}
-
-.mobile-menu-btn button {
-  background: none;
+/* PDF container styling */
+.pdf-container {
+  width: 100%;
+  height: 80vh;
   border: none;
-  cursor: pointer;
 }
 
-/* Responsive Styles */
-@media (min-width: 768px) {
-  .matrix-header {
-    flex-direction: row;
-    padding: 0.75rem 1.5rem;
-    font-size: 1.25rem;
-  }
-
-  .matrix-nav {
-    display: inline-block;
-    margin-right: 2rem;
-    flex-wrap: nowrap;
-  }
-
-  .matrix-link {
-    margin-right: 1.5rem;
-    font-size: 1rem;
-    min-width: auto;
-    min-height: auto;
-    display: inline;
-  }
-
-  .matrix-glow {
-    margin-left: auto;
-    margin-top: 0;
-    font-size: 1.25rem;
-  }
-
-  .mobile-menu-btn {
-    display: none;
-  }
-
-  .content-wrapper {
-    padding-top: 0;
-  }
-
-  .matrix-text {
-    font-size: 3.5rem;
-    white-space: nowrap;
-  }
-
-  .pdf-container {
-    height: 80vh;
-  }
+/* Smooth transitions */
+#pdf-viewer-section, #samples-grid {
+  transition: opacity 0.3s ease;
 }
 
-@media (max-width: 480px) {
-  .matrix-text {
-    font-size: 2rem;
-  }
-
-  .typing-shadow img {
-    width: 100%;
-  }
-}
-
-/* Make sure all clickable elements are touch-friendly */
-a, button {
-  min-width: 44px;
-  min-height: 44px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Project cards and other interactive elements */
-.bg-gray-800\/70 {
-  padding: 1rem;
-  margin: 0.5rem;
+/* GitHub badge styling */
+.github-badge {
+  background-color: #2ea44f;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.75rem;
+  margin-left: 4px;
+  display: inline-block;
 }

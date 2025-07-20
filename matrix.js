@@ -6,7 +6,7 @@ if (canvas) {
   canvas.height = window.innerHeight;
 
   let letters = "ㄱㄴㄷㄹㅁㅂㅅㅇㅈㅊㅋㅌㅍㅎㅏㅑㅓㅕㅗㅛㅜㅠㅡㅣ".split("");
-  let fontSize = window.innerWidth < 768 ? 10 : 14;
+  let fontSize = 14;
   let columns = canvas.width / fontSize;
   let drops = new Array(Math.floor(columns)).fill(1);
 
@@ -33,7 +33,6 @@ if (canvas) {
   window.addEventListener("resize", () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-    fontSize = window.innerWidth < 768 ? 10 : 14;
     columns = canvas.width / fontSize;
     drops = new Array(Math.floor(columns)).fill(1);
   });
@@ -88,16 +87,6 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         scrollHeader.classList.remove("visible");
       }
-    });
-  }
-
-  // Mobile menu toggle
-  const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-  const matrixNav = document.querySelector('.matrix-nav');
-  
-  if (mobileMenuBtn && matrixNav) {
-    mobileMenuBtn.addEventListener('click', () => {
-      matrixNav.classList.toggle('active');
     });
   }
 

@@ -2,20 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Daniel Son - Writing Samples</title>
     <link rel="stylesheet" href="style.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.12.313/pdf.min.js"></script>
   </head>
   <body>
-    <div class="mobile-menu-btn md:hidden fixed top-4 right-4 z-50">
-      <button class="text-green-400 text-2xl">☰</button>
-    </div>
-
     <header id="scroll-header" class="matrix-header">
       <div class="matrix-scanline"></div>
       <nav class="matrix-nav">
@@ -44,7 +37,7 @@
       <!-- Main Writing Samples Grid -->
       <div id="samples-grid">
         <div
-          class="h-screen flex flex-col justify-center items-center text-center px-4"
+          class="h-screen flex flex-col justify-center items-center text-center"
         >
           <h1 class="matrix-text">Writing Samples</h1>
           <div class="mt-4 typing-shadow">
@@ -58,16 +51,16 @@
         </div>
 
         <div class="my-12 px-4">
-          <div
-            class="bg-black/80 rounded-2xl shadow-lg p-4 md:p-6 max-w-6xl mx-auto"
-          >
+          <div class="bg-black/80 rounded-2xl shadow-lg p-6 max-w-6xl mx-auto">
             <br />
             <div class="text-center my-6">
               <a href="index.html" class="neon-button">Home</a>
             </div>
             <br />
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-8">
+            <div
+              class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mb-8"
+            >
               <!-- Update all links to use URL parameters -->
               <div
                 class="bg-gray-800/70 p-4 rounded-lg hover:scale-[1.02] transition-transform"
@@ -78,12 +71,10 @@
                   rel="noopener noreferrer"
                   class="block"
                 >
-                  <h3 class="text-lg md:text-xl font-bold mb-2">
+                  <h3 class="text-xl font-bold mb-2">
                     Why I Love Cybersecurity
                   </h3>
-                  <p class="text-gray-400 mb-3 text-sm md:text-base">
-                    A mosquitoe essay
-                  </p>
+                  <p class="text-gray-400 mb-3">A mosquitoe essay</p>
                   <span class="text-xs bg-blue-400 px-2 py-1 rounded"
                     >July 5, 2025</span
                   >
@@ -94,12 +85,10 @@
                 class="bg-gray-800/70 p-4 rounded-lg hover:scale-[1.02] transition-transform"
               >
                 <a href="writing.html?sample=machines" class="block">
-                  <h3 class="text-lg md:text-xl font-bold mb-2">
+                  <h3 class="text-xl font-bold mb-2">
                     Machines Do Think... Kind Of
                   </h3>
-                  <p class="text-gray-400 mb-3 text-sm md:text-base">
-                    Do machines actually think?
-                  </p>
+                  <p class="text-gray-400 mb-3">Do machines actually think?</p>
                   <span class="text-xs bg-blue-400 px-2 py-1 rounded"
                     >Apr 25, 2025</span
                   >
@@ -110,10 +99,10 @@
                 class="bg-gray-800/70 p-4 rounded-lg hover:scale-[1.02] transition-transform"
               >
                 <a href="writing.html?sample=platovsmlk" class="block">
-                  <h3 class="text-lg md:text-xl font-bold mb-2">
+                  <h3 class="text-xl font-bold mb-2">
                     Plato vs. Martin Luther King Jr.
                   </h3>
-                  <p class="text-gray-400 mb-3 text-sm md:text-base">
+                  <p class="text-gray-400 mb-3">
                     An argument for civil disobedience
                   </p>
                   <span class="text-xs bg-blue-400 px-2 py-1 rounded"
@@ -126,12 +115,10 @@
                 class="bg-gray-800/70 p-4 rounded-lg hover:scale-[1.02] transition-transform"
               >
                 <a href="writing.html?sample=cherryhill" class="block">
-                  <h3 class="text-lg md:text-xl font-bold mb-2">
+                  <h3 class="text-xl font-bold mb-2">
                     Cherry Hill Urban Community Garden
                   </h3>
-                  <p class="text-gray-400 mb-3 text-sm md:text-base">
-                    A case study
-                  </p>
+                  <p class="text-gray-400 mb-3">A case study</p>
                   <span class="text-xs bg-blue-400 px-2 py-1 rounded"
                     >Oct 20, 2024</span
                   >
@@ -142,10 +129,10 @@
                 class="bg-gray-800/70 p-4 rounded-lg hover:scale-[1.02] transition-transform"
               >
                 <a href="writing.html?sample=gymculture" class="block">
-                  <h3 class="text-lg md:text-xl font-bold mb-2">
+                  <h3 class="text-xl font-bold mb-2">
                     Damaging Consequences of Toxic Gym Culture
                   </h3>
-                  <p class="text-gray-400 mb-3 text-sm md:text-base">
+                  <p class="text-gray-400 mb-3">
                     A close look at modern gym culture
                   </p>
                   <span class="text-xs bg-blue-400 px-2 py-1 rounded"
@@ -158,12 +145,8 @@
                 class="bg-gray-800/70 p-4 rounded-lg hover:scale-[1.02] transition-transform"
               >
                 <a href="writing.html?sample=commonapp" class="block">
-                  <h3 class="text-lg md:text-xl font-bold mb-2">
-                    Common App Essay
-                  </h3>
-                  <p class="text-gray-400 mb-3 text-sm md:text-base">
-                    My style journey
-                  </p>
+                  <h3 class="text-xl font-bold mb-2">Common App Essay</h3>
+                  <p class="text-gray-400 mb-3">My style journey</p>
                   <span class="text-xs bg-blue-400 px-2 py-1 rounded"
                     >Oct 1, 2022</span
                   >
@@ -174,10 +157,10 @@
                 class="bg-gray-800/70 p-4 rounded-lg hover:scale-[1.02] transition-transform"
               >
                 <a href="writing.html?sample=america" class="block">
-                  <h3 class="text-lg md:text-xl font-bold mb-2">
+                  <h3 class="text-xl font-bold mb-2">
                     America: The Nation Builder
                   </h3>
-                  <p class="text-gray-400 mb-3 text-sm md:text-base">
+                  <p class="text-gray-400 mb-3">
                     Understanding Japan's reconstruction post WWII
                   </p>
                   <span class="text-xs bg-blue-400 px-2 py-1 rounded"
