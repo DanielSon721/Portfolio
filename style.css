@@ -1,3 +1,6 @@
+/* style.css */
+
+/* Base Styles */
 html,
 body {
   margin: 0;
@@ -19,6 +22,7 @@ canvas {
   display: block;
 }
 
+/* Content Layering */
 .content-wrapper {
   position: relative;
   z-index: 10;
@@ -36,14 +40,7 @@ canvas {
   filter: drop-shadow(0 0 6px #0f0) drop-shadow(0 0 12px #0f0);
 }
 
-@keyframes matrixFlicker {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.85; }
-  60% { opacity: 1; }
-  70% { opacity: 0.9; }
-  80% { opacity: 1; }
-}
-
+/* Header and Glow */
 .matrix-header {
   position: fixed;
   top: 0;
@@ -60,12 +57,23 @@ canvas {
   transition: transform 0.7s ease;
   overflow: hidden;
   border-bottom: 1px solid #39ff14;
+  display: flex;
+  align-items: center;
 }
 
 .matrix-header.visible {
   transform: translateY(0);
 }
 
+.matrix-glow {
+  position: relative;
+  color: #39ff14;
+  text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14, 0 0 15px #39ff14;
+  animation: matrixFlicker 3s infinite ease-in-out;
+  margin-left: auto;
+}
+
+/* Scanline Animation */
 .matrix-scanline {
   position: absolute;
   top: 0;
@@ -73,42 +81,28 @@ canvas {
   width: 2px;
   height: 100%;
   background: #39ff14;
-  box-shadow: 
-    0 0 5px #39ff14,
-    0 0 10px #39ff14,
-    0 0 15px #39ff14;
+  box-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14, 0 0 15px #39ff14;
   animation: scanline 18s linear infinite;
   z-index: -1;
   opacity: 0.9;
 }
 
 @keyframes scanline {
-  0% {
-    transform: translateX(-20px);
-    opacity: 0;
-  }
-  2% {
-    opacity: 1;
-  }
-  98% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(calc(100vw + 20px));
-    opacity: 0;
-  }
+  0% { transform: translateX(-20px); opacity: 0; }
+  2% { opacity: 1; }
+  98% { opacity: 1; }
+  100% { transform: translateX(calc(100vw + 20px)); opacity: 0; }
 }
 
-.matrix-glow {
-  position: relative;
-  color: #39ff14;
-  text-shadow: 
-    0 0 5px #39ff14, 
-    0 0 10px #39ff14, 
-    0 0 15px #39ff14;
-  animation: matrixFlicker 3s infinite ease-in-out;
+@keyframes matrixFlicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.85; }
+  60% { opacity: 1; }
+  70% { opacity: 0.9; }
+  80% { opacity: 1; }
 }
 
+/* Navigation & Links */
 .matrix-nav {
   display: inline-block;
   margin-right: 2rem;
@@ -132,23 +126,17 @@ canvas {
   margin-right: 0;
 }
 
-.matrix-header {
-  display: flex;
-  align-items: center;
-}
-
-.matrix-glow {
+/* Utility Styles */
+.black-box {
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 1rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  max-width: 80rem;
   margin-left: auto;
+  margin-right: auto;
 }
 
-/* PDF Container Styles */
-.pdf-container {
-  width: 100%;
-  height: 800px;
-  border: none;
-}
-
-/* Neon Button Styles */
 .neon-button {
   display: inline-block;
   padding: 10px 20px;
@@ -170,35 +158,23 @@ canvas {
   transform: translateY(-2px);
 }
 
-/* Black Box Styles */
-.black-box {
-  background-color: rgba(0, 0, 0, 0.8);
-  border-radius: 1rem;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  padding: 1.5rem;
-  max-width: 80rem;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Hidden class */
-.hidden {
-  display: none;
-}
-
-/* PDF container styling */
+/* PDF Viewer */
 .pdf-container {
   width: 100%;
   height: 80vh;
   border: none;
 }
 
-/* Smooth transitions */
+/* Hidden utility */
+.hidden {
+  display: none;
+}
+
 #pdf-viewer-section, #samples-grid {
   transition: opacity 0.3s ease;
 }
 
-/* GitHub badge styling */
+/* GitHub Badge */
 .github-badge {
   background-color: #2ea44f;
   color: white;
@@ -207,4 +183,49 @@ canvas {
   font-size: 0.75rem;
   margin-left: 4px;
   display: inline-block;
+}
+
+/* 🌐 Responsive Styles */
+@media screen and (max-width: 768px) {
+  .matrix-text {
+    font-size: 30px;
+    text-align: center;
+    white-space: normal;
+  }
+
+  .matrix-header {
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .matrix-link {
+    font-size: 0.875rem;
+    margin-right: 1rem;
+  }
+
+  .black-box {
+    padding: 1rem;
+    margin: 1rem;
+  }
+
+  .neon-button {
+    padding: 8px 16px;
+    font-size: 0.875rem;
+    letter-spacing: 0.5px;
+  }
+
+  .pdf-container {
+    height: 60vh;
+  }
+
+  .matrix-nav {
+    display: block;
+    margin: 1rem 0;
+  }
+
+  .matrix-glow {
+    margin: 0.5rem 0 0 auto;
+  }
 }

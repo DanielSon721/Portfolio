@@ -1,4 +1,5 @@
-// Matrix Rain Effect
+// matrix.js
+
 const canvas = document.getElementById("canvas");
 if (canvas) {
   const ctx = canvas.getContext("2d");
