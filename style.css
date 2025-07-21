@@ -112,7 +112,11 @@ canvas {
 .matrix-nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
+  gap: 1.25rem;
+}
+
+.matrix-link {
+  padding: 0.4rem 0.6rem;
 }
 
 .matrix-link {
