@@ -119,6 +119,7 @@ canvas {
   padding: 0.4rem 0.6rem;
 }
 
+
 .matrix-link {
   color: #39ff14;
   text-decoration: none;
@@ -185,4 +186,29 @@ canvas {
   font-size: 0.75rem;
   margin-left: 4px;
   display: inline-block;
+}
+
+@media screen and (max-width: 600px) {
+  .matrix-header {
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .matrix-nav {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    white-space: nowrap;
+    gap: 0.5rem;
+  }
+
+  .matrix-link {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.4rem;
+  }
+
+  .matrix-glow {
+    font-size: 0.9rem;
+  }
 }
