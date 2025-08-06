@@ -1,0 +1,277 @@
+<!--writing.html-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daniel Son - Writing Samples</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.12.313/pdf.min.js"></script>
+  </head>
+  <body>
+    <header id="scroll-header" class="matrix-header">
+      <div class="matrix-scanline"></div>
+      <nav class="matrix-nav">
+        <a href="index.html" class="matrix-link">Home</a>
+        <a href="aboutme.html" class="matrix-link">About Me</a>
+        <a href="writing.html" class="matrix-link">Writing Samples</a>
+        <a href="projects.html" class="matrix-link">Projects</a>
+      </nav>
+      <a href="index.html" class="matrix-glow">Daniel Son</a>
+    </header>
+
+    <canvas id="canvas"></canvas>
+
+    <div class="content-wrapper">
+      <!-- Main Writing Samples Grid -->
+      <div id="samples-grid">
+        <div
+          class="h-screen flex flex-col justify-center items-center text-center"
+        >
+          <h1 class="matrix-text">Projects</h1>
+          <div class="mt-4 typing-shadow">
+            <img
+              src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&pause=1500&color=FFFFFF&center=true&vCenter=true&width=500&
+              lines=
+              More projects"
+              alt="Typing Animation"
+            />
+          </div>
+        </div>
+
+        <div class="my-12 px-4">
+          <div class="bg-black/80 rounded-2xl shadow-lg p-6 max-w-6xl mx-auto">
+            <br />
+            <div class="text-center my-6">
+              <a href="index.html" class="neon-button">Home</a>
+            </div>
+            <br />
+
+            <div
+              class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8"
+            >
+              <!-- Update all links to use URL parameters -->
+              <!-- Project 1 -->
+              <div
+                class="bg-gray-800/70 p-4 rounded-lg hover:scale-[1.02] transition-transform"
+              >
+                <a
+                  href="https://github.com/DanielSon721/Why-I-Love-Cybersecurity"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="block"
+                >
+                  <h3 class="text-xl font-bold mb-2">
+                    Why I Love Cybersecurity
+                  </h3>
+                  <p class="text-gray-400 mb-3">An essay<br /><br /></p>
+                  <span class="text-xs bg-blue-400 px-2 py-1 rounded"
+                    >English</span
+                  >
+                </a>
+              </div>
+
+              <!-- Project 2 -->
+              <div
+                class="bg-gray-800/70 p-4 rounded-lg hover:scale-[1.02] transition-transform"
+              >
+                <a
+                  href="https://github.com/DanielSon721/Home-Lab"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="block"
+                >
+                  <h3 class="text-xl font-bold mb-2">Home Lab</h3>
+                  <p class="text-gray-400 mb-3">
+                    VM configuration, network analysis, ethical hacking
+                  </p>
+                  <span class="text-xs bg-pink-600 px-2 py-1 rounded"
+                    >Kali Linux</span
+                  >
+                  <span class="text-xs bg-pink-600 px-2 py-1 rounded"
+                    >VMWare</span
+                  >
+                  <span class="text-xs bg-pink-600 px-2 py-1 rounded"
+                    >Wireshark</span
+                  >
+                  <span class="text-xs bg-pink-600 px-2 py-1 rounded"
+                    >Nmap</span
+                  >
+                </a>
+              </div>
+
+              <!-- Project 3 -->
+              <div
+                class="bg-gray-800/70 p-4 rounded-lg hover:scale-[1.02] transition-transform"
+              >
+                <a
+                  href="https://github.com/DanielSon721/Unix-Shell"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="block"
+                >
+                  <h3 class="text-xl font-bold mb-2">Unix Shell</h3>
+                  <p class="text-gray-400 mb-3">
+                    Custom implementation of a Unix shell
+                  </p>
+                  <span class="text-xs bg-purple-600 px-2 py-1 rounded">C</span>
+                </a>
+              </div>
+
+              <!-- Project 4 -->
+              <div
+                class="bg-gray-800/70 p-4 rounded-lg hover:scale-[1.02] transition-transform"
+              >
+                <a
+                  href="https://github.com/DanielSon721/OCaml-Interpreter"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="block"
+                >
+                  <h3 class="text-xl font-bold mb-2">OCaml Interpreter</h3>
+                  <p class="text-gray-400 mb-3">
+                    Simple computer language interpreter
+                  </p>
+                  <span class="text-xs bg-yellow-900 px-2 py-1 rounded"
+                    >OCaml</span
+                  >
+                  <span class="text-xs bg-yellow-900 px-2 py-1 rounded"
+                    >Dune</span
+                  >
+                </a>
+              </div>
+
+              <!-- Project 5 -->
+              <div
+                class="bg-gray-800/70 p-4 rounded-lg hover:scale-[1.02] transition-transform"
+              >
+                <a
+                  href="https://github.com/DanielSon721/Auto-Messenger"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="block"
+                >
+                  <h3 class="text-xl font-bold mb-2">Auto Messenger</h3>
+                  <p class="text-gray-400 mb-3">
+                    Messaging system for fraternity financial communications
+                  </p>
+                  <span class="text-xs bg-green-700 px-2 py-1 rounded"
+                    >Python</span
+                  >
+                  <span class="text-xs bg-green-700 px-2 py-1 rounded"
+                    >Pandas</span
+                  >
+                  <span class="text-xs bg-green-700 px-2 py-1 rounded"
+                    >Google Sheets API</span
+                  >
+                </a>
+              </div>
+
+              <!-- Project 6 -->
+              <div
+                class="bg-gray-800/70 p-4 rounded-lg hover:scale-[1.02] transition-transform"
+              >
+                <a
+                  href="https://github.com/DanielSon721/Hacking-Tools"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="block"
+                >
+                  <h3 class="text-xl font-bold mb-2">Hacking Tools</h3>
+                  <p class="text-gray-400 mb-3">
+                    Collection of cybersecurity tools and scripts
+                  </p>
+                  <span class="text-xs bg-indigo-600 px-2 py-1 rounded"
+                    >Python</span
+                  >
+                  <span class="text-xs bg-indigo-600 px-2 py-1 rounded"
+                    >Nmap</span
+                  >
+                  <span class="text-xs bg-indigo-600 px-2 py-1 rounded"
+                    >Metasploit</span
+                  >
+                  <span class="text-xs bg-indigo-600 px-2 py-1 rounded"
+                    >Gemini API</span
+                  >
+                </a>
+              </div>
+
+              <!-- Project 7 -->
+              <div
+                class="bg-gray-800/70 p-4 rounded-lg hover:scale-[1.02] transition-transform"
+              >
+                <a
+                  href="https://github.com/DanielSon721/Slime-Skirmish"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="block"
+                >
+                  <h3 class="text-xl font-bold mb-2">Slime Skirmish</h3>
+                  <p class="text-gray-400 mb-3">
+                    2-Dimensional Survival Game<br /><br />
+                  </p>
+                  <span class="text-xs bg-orange-500 px-2 py-1 rounded"
+                    >C#</span
+                  >
+                  <span class="text-xs bg-orange-500 px-2 py-1 rounded"
+                    >Unity</span
+                  >
+                </a>
+              </div>
+
+              <!-- Project 8 -->
+              <div
+                class="bg-gray-800/70 p-4 rounded-lg hover:scale-[1.02] transition-transform"
+              >
+                <a
+                  href="https://github.com/DanielSon721/Texas-Hold-em-Poker"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="block"
+                >
+                  <h3 class="text-xl font-bold mb-2">Texas Hold'em Poker</h3>
+                  <p class="text-gray-400 mb-3">
+                    Play poker against A.I. opponents<br /><br />
+                  </p>
+                  <span class="text-xs bg-red-600 px-2 py-1 rounded"
+                    >Python</span
+                  >
+                </a>
+              </div>
+
+              <!-- Project 9 -->
+              <div
+                class="bg-gray-800/70 p-4 rounded-lg hover:scale-[1.02] transition-transform"
+              >
+                <a
+                  href="https://github.com/DanielSon721/RLCS-Predictor"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="block"
+                >
+                  <h3 class="text-xl font-bold mb-2">RLCS Predictor</h3>
+                  <p class="text-gray-400 mb-3">
+                    RLCS Esports match outcome predictor
+                  </p>
+                  <span class="text-xs bg-yellow-500 px-2 py-1 rounded"
+                    >Jupyter Notebook</span
+                  >
+                  <span class="text-xs bg-yellow-500 px-2 py-1 rounded"
+                    >Pandas</span
+                  >
+                  <span class="text-xs bg-yellow-500 px-2 py-1 rounded"
+                    >scikit-learn</span
+                  >
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="matrix.js"></script>
+  </body>
+</html>
