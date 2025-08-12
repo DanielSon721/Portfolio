@@ -1,6 +1,6 @@
 # danielsonportfolio.com
 
-Let me preface this with the fact that I know absolutely nothing about frontend development.
+Let me preface documentation this with the fact that I know absolutely nothing about frontend development.
 
 This portfolio was made 100% me prompt engineering ChatGPT 4o.
 
