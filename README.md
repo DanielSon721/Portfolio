@@ -2,7 +2,7 @@
 
 Let me preface documentation this with the fact that I know absolutely nothing about frontend development.
 
-This portfolio was made 100% me prompt engineering ChatGPT 4o.
+This portfolio was made 100% by me prompt engineering ChatGPT 4o.
 
 While making this project, although I did learn a little about the basics of HTML, CSS, and Javascript, the main bulk of what I learned from making this portfolio was prompt engineering.
 
