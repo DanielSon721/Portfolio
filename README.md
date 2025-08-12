@@ -24,4 +24,4 @@ I kept up this process for hours. Adding a new component to the portfolio, then 
 
 I of course had to go in and manually type in the content of the portfolio, but that was easy. Anyone can replace text in HTML code with their own words. But the difficult work had been done. 1500+ lines of HTML, CSS, and Javascript were written, bringing my vision into reality. And the best part? I put in minimal effort.
 
-And that's why harnessing A.I. and prompt engineering is one of, if not the most important skill one can have in 2025 and the foreseeable future.
+And that's why harnessing A.I. and prompt engineering is one of, if not the most important skill one can have in 2025 and the foreseeable future. Any ordinary person can make any extraordinary thing, quickly and easily.
