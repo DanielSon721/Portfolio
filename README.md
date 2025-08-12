@@ -12,7 +12,7 @@ First, I needed to conceive the portfolio in my mind. I needed a vision. Once I 
 
 > Add a menu bar at the top containing buttons: "About Me", "Writing Samples", "Projects"
 
-One step at a time, I built the skeleton of my portfolio. And let me get one thing straight, ***A.I. never gets it right on the first try***. I had to constantly prompt engineer ChatGPT to get it to make my portfolio the way I had envisioned it.
+One step at a time, I built out my portfolio. And let me get one thing straight, ***A.I. never gets it right on the first try***. I had to constantly prompt engineer ChatGPT to get it to make my portfolio the way I had envisioned it.
 
 > Make it so "My Toolkit" and "Certifications" are in a column taking up the left 1/3 of the box, and have the "Projects" section take up the right 2/3
 
@@ -20,7 +20,7 @@ One step at a time, I built the skeleton of my portfolio. And let me get one thi
 
 > Add glow to the button text
 
-I kept up this process for hours. Adding a new component to the portfolio, then editing it over and over and over until it was just right.
+I kept up this process for ***hours***. Adding a new component to the portfolio, then editing it over and over until it was just right. Rinse and repeat.
 
 I of course had to go in and manually type in the content of the portfolio, but that was easy. Anyone can replace text in HTML code with their own words. But the difficult work had been done. 1500+ lines of HTML, CSS, and Javascript were written, bringing my vision into reality. And the best part? I put in minimal effort.
 
