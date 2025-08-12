@@ -1,6 +1,6 @@
 # danielsonportfolio.com
 
-Let me preface documentation this with the fact that I know absolutely nothing about frontend development. This portfolio was made 100% by me prompt engineering ChatGPT 4o.
+Let me preface documentation this with the fact that **I know absolutely nothing about frontend development**. This portfolio was made 100% by me prompt engineering ChatGPT 4o.
 
 While making this project, although I did learn a little about the basics of HTML, CSS, and Javascript, the main bulk of what I learned from making this portfolio was prompt engineering. While yes, I did not write any of this code myself, that doesn't mean that I still put in a lot of time and effort into this portfolio.
 
