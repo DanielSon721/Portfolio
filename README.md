@@ -12,7 +12,7 @@ First, I needed to conceive the portfolio in my mind. I needed a vision. Once I 
 
 > Add a menu bar at the top containing buttons: "About Me", "Writing Samples", "Projects"
 
-One step at a time, I built the skeleton of my portfolio. And let me get one thing straight, **A.I. never gets it right on the first try**. I had to constantly prompt engineer ChatGPT to get it to make my portfolio the way I had envisioned it.
+One step at a time, I built the skeleton of my portfolio. And let me get one thing straight, _**A.I. never gets it right on the first try**_. I had to constantly prompt engineer ChatGPT to get it to make my portfolio the way I had envisioned it.
 
 > Make it so "My Toolkit" and "Certifications" are in a column taking up the left 1/3 of the box, and have the "Projects" section take up the right 2/3
 
