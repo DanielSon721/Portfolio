@@ -6,19 +6,19 @@ While making this project, although I did learn a little about the basics of HTM
 
 First, I needed to conceive the portfolio in my mind. I needed a vision. Once I had my vision, I told ChatGPT what to do.
 
-_Make me a portfolio website with a matrix rain background_
+> Make me a portfolio website with a matrix rain background
 
-_Add a black box containing sections: "My Toolkit", "Certifications", and "Projects"_
+> Add a black box containing sections: "My Toolkit", "Certifications", and "Projects"
 
-_Add a menu bar at the top containing buttons: "About Me", "Writing Samples", "Projects"_
+> Add a menu bar at the top containing buttons: "About Me", "Writing Samples", "Projects"
 
 One step at a time, I built the skeleton of my portfolio. And let me get one thing straight, **A.I. never gets it right on the first try**. I had to constantly prompt engineer ChatGPT to get it to make my portfolio the way I had envisioned it.
 
-_Make it so "My Toolkit" and "Certifications" are in a column taking up the left 1/3 of the box, and have the "Projects" section take up the right 2/3_
+> Make it so "My Toolkit" and "Certifications" are in a column taking up the left 1/3 of the box, and have the "Projects" section take up the right 2/3
 
-_Change the menu buttons to be a little smaller_
+> Change the menu buttons to be a little smaller
 
-_Add glow to the button text_
+> Add glow to the button text
 
 I kept up this process for hours. Adding a new component to the portfolio, then editing it over and over and over until it was just right.
 
