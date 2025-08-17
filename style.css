@@ -1,20 +1,26 @@
-/* Base Styles */
+/* ===== CORE STYLES ===== */
+:root {
+  --content-width: 1300px;
+  --outer-width: 1400px;
+}
+
+/* Base Reset */
 html, body {
   margin: 0;
   padding: 0;
-  background: black;
-  color: white;
+  background: #000;
+  color: #fff;
   font-family: "Fira Code", monospace;
   overflow-x: hidden;
-  font-size: 16px; /* Base font size */
+  font-size: 16px;
 }
 
-/* Responsive Font Scaling */
-@media (min-width: 1600px) {
-  html { font-size: 18px; }
-}
-@media (min-width: 2000px) {
-  html { font-size: 20px; }
+/* Force Tailwind Overrides */
+.container-override {
+  max-width: var(--content-width) !important;
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 /* Matrix Background */
@@ -23,22 +29,34 @@ canvas {
   top: 0;
   left: 0;
   z-index: 0;
-  width: 100vw;
-  height: 100vh;
-  background: black;
-  display: block;
+  width: 100vw !important;
+  height: 100vh !important;
+  background: black !important;
+  display: block !important;
 }
 
-/* Content Container */
+/* Content Wrapper */
 .content-wrapper {
   position: relative;
   z-index: 10;
-  max-width: 1500px;
+  max-width: var(--outer-width);
+  width: 100%;
   margin: 0 auto;
   padding: 0 2rem;
+  box-sizing: border-box !important;
 }
 
-/* Header Styles */
+/* Black Content Box - Now Using Important */
+.black-content-box {
+  max-width: var(--content-width) !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+  background-color: rgba(0, 0, 0, 0.8) !important;
+  border-radius: 1rem !important;
+  padding: 1.5rem !important;
+}
+
+/* ===== HEADER STYLES ===== */
 .matrix-header {
   position: fixed;
   top: 0;
@@ -99,8 +117,9 @@ canvas {
 .typing-shadow {
   filter: drop-shadow(0 0 6px #0f0) drop-shadow(0 0 12px #0f0);
   width: 100%;
-  max-width: 800px;
   margin: 0 auto;
+  display: flex;
+  justify-content: center;
 }
 
 .typing-shadow img {
