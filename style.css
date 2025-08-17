@@ -42,20 +42,24 @@ canvas {
   position: relative;
   z-index: 10;
   width: 100%;
+  max-width: 95vw; /* Will never exceed 95% of screen width */
   margin: 0 auto;
   padding: 0 2rem;
-  box-sizing: border-box !important;
-  max-width: var(--outer-width);
+  box-sizing: border-box;
 }
 
 /* Black Content Box - Now Using Important */
 .black-content-box {
-  width: 100% !important;
-  margin: 0 auto !important;
-  background-color: rgba(0, 0, 0, 0.8) !important;
-  border-radius: 1rem !important;
-  padding: 2rem !important;
-  max-width: var(--content-width) !important;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 1rem;
+  padding: 2rem;
+  margin: 0 auto;
+  box-sizing: border-box;
+  
+  /* Fluid width with reasonable limits */
+  max-width: 1600px; /* Maximum width on huge screens */
+  min-width: 300px;  /* Minimum width on tiny screens */
 }
 
 /* ===== HEADER STYLES ===== */
@@ -252,17 +256,21 @@ canvas {
   80% { opacity: 1; }
 }
 
-@media screen and (min-width: 2500px) {
-  :root {
-    --content-width: min(80vw, 2200px);
-    --outer-width: min(85vw, 2400px);
-  }
-  
-  html {
-    font-size: 18px; /* Slightly larger text on huge screens */
-  }
-  
+/* For very large displays (4K and beyond) */
+@media screen and (min-width: 2000px) {
   .black-content-box {
-    padding: 3rem !important;
+    max-width: 1800px;
+    padding: 3rem;
+  }
+}
+
+/* For ultra-wide displays */
+@media screen and (min-width: 3000px) {
+  .black-content-box {
+    max-width: 2000px;
+    padding: 4rem;
+  }
+  html {
+    font-size: 18px; /* Slightly larger text */
   }
 }
