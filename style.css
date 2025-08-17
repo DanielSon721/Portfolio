@@ -1,15 +1,23 @@
-/* style.css */
-
-html,
-body {
+/* Base Styles */
+html, body {
   margin: 0;
   padding: 0;
   background: black;
   color: white;
   font-family: "Fira Code", monospace;
   overflow-x: hidden;
+  font-size: 16px; /* Base font size */
 }
 
+/* Responsive Font Scaling */
+@media (min-width: 1600px) {
+  html { font-size: 18px; }
+}
+@media (min-width: 2000px) {
+  html { font-size: 20px; }
+}
+
+/* Matrix Background */
 canvas {
   position: fixed;
   top: 0;
@@ -21,32 +29,16 @@ canvas {
   display: block;
 }
 
+/* Content Container */
 .content-wrapper {
   position: relative;
   z-index: 10;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
-.matrix-text {
-  color: white;
-  font-size: 60px;
-  font-family: monospace;
-  white-space: nowrap;
-  text-shadow: 0 0 10px #0f0, 0 0 20px #0f0, 0 0 30px #0f0;
-}
-
-.typing-shadow {
-  filter: drop-shadow(0 0 6px #0f0) drop-shadow(0 0 12px #0f0);
-}
-
-@keyframes matrixFlicker {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.85; }
-  60% { opacity: 1; }
-  70% { opacity: 0.9; }
-  80% { opacity: 1; }
-}
-
-/* 🧠 Responsive Header */
+/* Header Styles */
 .matrix-header {
   position: fixed;
   top: 0;
@@ -55,7 +47,6 @@ canvas {
   background-color: rgba(0, 0, 0, 1);
   color: #39ff14;
   font-weight: bold;
-  font-size: 1.25rem;
   padding: 0.75rem 1.5rem;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
   z-index: 50;
@@ -96,6 +87,55 @@ canvas {
   100% { transform: translateX(calc(100vw + 20px)); opacity: 0; }
 }
 
+/* Text Elements */
+.matrix-text {
+  color: white;
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-family: monospace;
+  white-space: nowrap;
+  text-shadow: 0 0 10px #0f0, 0 0 20px #0f0, 0 0 30px #0f0;
+}
+
+.typing-shadow {
+  filter: drop-shadow(0 0 6px #0f0) drop-shadow(0 0 12px #0f0);
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.typing-shadow img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Content Boxes */
+.bg-black\/80 {
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  max-width: 1250px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Grid Layout */
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+@media (min-width: 768px) {
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Links and Navigation */
 .matrix-glow {
   position: relative;
   color: #39ff14;
@@ -108,7 +148,6 @@ canvas {
   white-space: nowrap;
 }
 
-/* ✨ Responsive Navigation */
 .matrix-nav {
   display: flex;
   flex-wrap: wrap;
@@ -116,14 +155,9 @@ canvas {
 }
 
 .matrix-link {
-  padding: 0.4rem 0.6rem;
-}
-
-
-.matrix-link {
   color: #39ff14;
   text-decoration: none;
-  font-size: 1rem;
+  padding: 0.4rem 0.6rem;
   text-shadow: 0 0 2px #39ff14;
   transition: all 0.3s ease;
   white-space: nowrap;
@@ -133,13 +167,7 @@ canvas {
   text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14;
 }
 
-/* ✅ PDF & UI Styling */
-.pdf-container {
-  width: 100%;
-  height: 800px;
-  border: none;
-}
-
+/* Buttons */
 .neon-button {
   display: inline-block;
   padding: 10px 20px;
@@ -160,34 +188,16 @@ canvas {
   transform: translateY(-2px);
 }
 
-.black-box {
-  background-color: rgba(0, 0, 0, 0.8);
-  border-radius: 1rem;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  padding: 1.5rem;
-  max-width: 80rem;
-  margin-left: auto;
-  margin-right: auto;
+/* PDF Viewer */
+.pdf-container {
+  width: 100%;
+  min-height: 600px;
+  height: 70vh;
+  max-height: 1000px;
+  border: none;
 }
 
-.hidden {
-  display: none;
-}
-
-#pdf-viewer-section, #samples-grid {
-  transition: opacity 0.3s ease;
-}
-
-.github-badge {
-  background-color: #2ea44f;
-  color: white;
-  padding: 2px 6px;
-  border-radius: 3px;
-  font-size: 0.75rem;
-  margin-left: 4px;
-  display: inline-block;
-}
-
+/* Mobile Responsiveness */
 @media screen and (max-width: 600px) {
   .matrix-header {
     flex-wrap: nowrap;
@@ -211,4 +221,12 @@ canvas {
   .matrix-glow {
     font-size: 0.9rem;
   }
+}
+
+@keyframes matrixFlicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.85; }
+  60% { opacity: 1; }
+  70% { opacity: 0.9; }
+  80% { opacity: 1; }
 }
