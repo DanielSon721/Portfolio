@@ -5,7 +5,6 @@ if (canvas) {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
   //ㄱㄴㄷㄹㅁㅂㅅㅇㅈㅊㅋㅌㅍㅎㅏㅑㅓㅕㅗㅛㅜㅠㅡ
-  //
   let letters = "abcdefghijklmnopqrstuvwxyzㄱㄴㄷㄹㅁㅂㅅㅇㅈㅊㅋㅌㅍㅎㅏㅑㅓㅕㅗㅛㅜㅠㅡαβγδεζηθικλμνξοπρσςτυφχψω".split("");
   let fontSize = 14;
   let columns = canvas.width / fontSize;
@@ -120,3 +119,33 @@ function getSampleTitle(sample) {
   };
   return titles[sample] || 'Writing Sample';
 }
+
+// Course filtering functionality
+function filterCourses(category) {
+  // Update active button
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.classList.remove('active');
+  });
+  document.getElementById(`${category}-btn`).classList.add('active');
+  
+  // Show/hide courses based on category
+  const allCourses = document.querySelectorAll('.course-tile');
+  
+  allCourses.forEach(course => {
+    if (category === 'all') {
+      course.style.display = 'block';
+    } else if (category === 'cs' && course.classList.contains('cs-course')) {
+      course.style.display = 'block';
+    } else if (category === 'math' && course.classList.contains('math-course')) {
+      course.style.display = 'block';
+    } else {
+      course.style.display = 'none';
+    }
+  });
+}
+
+// Initialize with all courses showing
+document.addEventListener('DOMContentLoaded', function() {
+  // All courses are visible by default due to the HTML structure
+  console.log('Education filter initialized');
+});

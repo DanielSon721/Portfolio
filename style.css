@@ -15,6 +15,41 @@ html, body {
   font-size: 16px;
 }
 
+.filter-btn {
+  background-color: rgba(55, 65, 81, 0.7);
+  color: white;
+  border: 1px solid #39ff14;   /* keep only this green outline */
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.filter-btn:hover {
+  background-color: rgba(55, 65, 81, 0.9);
+  transform: scale(1.05);
+}
+
+.filter-btn.active {
+  background-color: #39ff14;
+  box-shadow: 0 0 10px #39ff14;
+  color: black; /* optional for contrast */
+}
+
+.course-tile {
+  background-color: rgba(55, 65, 81, 0.7);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  /* no border — reverted */
+}
+
+.course-tile:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
 /* Force Tailwind Overrides */
 .container-override {
   max-width: var(--content-width) !important;
