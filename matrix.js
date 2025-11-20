@@ -144,5 +144,5 @@ function filterCourses(category) {
 
 // Initialize with cs courses showing
 document.addEventListener('DOMContentLoaded', function() {
-  filterCourses('cs'); // or 'math' if you want
+  filterCourses('cs');
 });
