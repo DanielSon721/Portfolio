@@ -132,9 +132,7 @@ function filterCourses(category) {
   const allCourses = document.querySelectorAll('.course-tile');
   
   allCourses.forEach(course => {
-    if (category === 'all') {
-      course.style.display = 'block';
-    } else if (category === 'cs' && course.classList.contains('cs-course')) {
+    if (category === 'cs' && course.classList.contains('cs-course')) {
       course.style.display = 'block';
     } else if (category === 'math' && course.classList.contains('math-course')) {
       course.style.display = 'block';
@@ -144,8 +142,7 @@ function filterCourses(category) {
   });
 }
 
-// Initialize with all courses showing
+// Initialize with cs courses showing
 document.addEventListener('DOMContentLoaded', function() {
-  // All courses are visible by default due to the HTML structure
-  console.log('Education filter initialized');
+  filterCourses('cs'); // or 'math' if you want
 });
