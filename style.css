@@ -50,14 +50,15 @@ html, body {
   gap: 0.25rem;
   position: relative;
   overflow: hidden;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.32s ease, box-shadow 0.32s ease;
 }
 
 .course-tile h4 {
   margin: 0;
   width: 100%;
   text-align: center;
-  transition: transform 0.25s ease;
+  transition: transform 0.32s ease;
+  transition-delay: 0.08s; /* hover-out: wait for desc to fade */
 }
 
 .course-tile p {
@@ -65,7 +66,8 @@ html, body {
   opacity: 0;
   max-height: 0;
   overflow: hidden;
-  transition: opacity 0.25s ease, max-height 0.25s ease;
+  transition: opacity 0.25s ease, max-height 0.3s ease, margin-top 0.3s ease;
+  transition-delay: 0s; /* hover-out: fade immediately */
 }
 
 .course-tile:hover {
@@ -73,13 +75,15 @@ html, body {
 }
 
 .course-tile:hover h4 {
-  transform: none;
+  transform: translateY(-3px);
+  transition-delay: 0s; /* hover-in: move right away */
 }
 
 .course-tile:hover p {
   opacity: 1;
   max-height: 6rem;
-  margin-top: 0.25rem;
+  margin-top: 0.3rem;
+  transition-delay: 0.08s; /* hover-in: wait briefly for title lift */
 }
 
 /* Force Tailwind Overrides */
