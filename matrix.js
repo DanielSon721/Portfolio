@@ -146,3 +146,46 @@ function filterCourses(category) {
 document.addEventListener('DOMContentLoaded', function() {
   filterCourses('cs');
 });
+
+/************************************
+ *  LEETCODE ANALYTICS FETCH LOGIC  *
+ ************************************/
+
+const leetUsername = "DanielSon721";
+
+async function loadLeetCodeStats() {
+  try {
+    const res = await fetch(`https://leetcode-stats-api.herokuapp.com/${leetUsername}`);
+    const data = await res.json();
+
+    if (!data || !data.totalSolved) return;
+
+    // Main stat
+    document.getElementById("lc-total-solved").innerText = data.totalSolved;
+
+    // Labels
+    document.getElementById("lc-easy-label").innerText =
+      `${data.easySolved} / ${data.totalEasy}`;
+
+    document.getElementById("lc-medium-label").innerText =
+      `${data.mediumSolved} / ${data.totalMedium}`;
+
+    document.getElementById("lc-hard-label").innerText =
+      `${data.hardSolved} / ${data.totalHard}`;
+
+    // Bars
+    document.getElementById("lc-easy-bar").style.width =
+      `${(data.easySolved / data.totalEasy) * 100}%`;
+
+    document.getElementById("lc-medium-bar").style.width =
+      `${(data.mediumSolved / data.totalMedium) * 100}%`;
+
+    document.getElementById("lc-hard-bar").style.width =
+      `${(data.hardSolved / data.totalHard) * 100}%`;
+
+  } catch (err) {
+    console.log("LeetCode API error", err);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", loadLeetCodeStats);

@@ -733,34 +733,28 @@
           <br />
           <br />
 
-          <!-- Experience Section -->
+          <!-- Experience Section (disabled)
           <div class="mt-20">
             <h2 class="text-3xl font-bold mb-8 text-center">
               📂 Experience & Leadership
             </h2>
 
-            <!-- SHIFT RIGHT (Option B) -->
             <div class="max-w-4xl relative flex ml-[20%]">
-              <!-- LEFT COLUMN -->
               <div class="relative w-28">
                 <div
                   class="absolute left-[-12px] top-0 bottom-0 flex flex-col justify-between text-gray-500"
                 >
-                  <!-- Removed Jan 2023 -->
                   <span>Jan 2024</span>
                   <span>Jan 2025</span>
                   <span>Jan 2026</span>
                 </div>
 
-                <!-- Gray vertical spine -->
                 <div
                   class="absolute left-20 top-0 bottom-0 w-2 bg-gray-300 rounded-full"
                 ></div>
               </div>
 
-              <!-- RIGHT COLUMN -->
               <div class="relative flex-1 ml-14" style="height: 500px">
-                <!-- Treasurer (Nov 2024 – Present) -->
                 <div
                   class="absolute w-2 bg-green-500 rounded-full"
                   style="top: 42%; height: 58%; left: 0"
@@ -776,7 +770,6 @@
                   </p>
                 </div>
 
-                <!-- DevOps Engineer (Sep 2025 – Present) -->
                 <div
                   class="absolute w-2 bg-blue-500 rounded-full"
                   style="top: 83%; height: 17%; left: 30px"
@@ -795,50 +788,87 @@
               </div>
             </div>
           </div>
+          -->
 
           <br />
           <br />
-          <br />
-          <br />
-          <br />
-          <br />
 
-          <!-- GitHub Analytics -->
-          <div>
-            <h2 class="text-3xl font-bold mb-6 text-center">
-              📊 GitHub Analytics
+          <!-- LeetCode Analytics Section (disabled)
+          <div class="mt-20">
+            <h2 class="text-3xl font-bold mb-8 text-center">
+              📊 LeetCode Analytics
             </h2>
-            <div class="flex flex-col md:flex-row justify-center gap-6">
-              <a
-                href="https://github.com/DanielSon721"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  class="h-[165px] w-auto hover:scale-105 transition-transform"
-                  src="https://github-readme-stats.vercel.app/api?username=danielson721&show_icons=true&theme=tokyonight&include_all_commits=true"
-                  alt="GitHub Stats"
-                />
-              </a>
-              <a
-                href="https://github.com/DanielSon721"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  class="h-[165px] w-auto hover:scale-105 transition-transform"
-                  src="https://github-readme-stats.vercel.app/api/top-langs/?username=danielson721&layout=compact&theme=tokyonight"
-                  alt="Top Languages"
-                />
-              </a>
+
+            <div class="max-w-4xl mx-auto bg-gray-800/70 p-6 rounded-lg">
+              <div class="grid grid-cols-1 text-center mb-8">
+                <div class="p-4 bg-gray-900/60 rounded-lg">
+                  <h3 class="text-2xl font-bold text-green-400">
+                    <span id="lc-total-solved">--</span>
+                  </h3>
+                  <p class="text-gray-400 text-sm mt-1">
+                    Total Problems Solved
+                  </p>
+                </div>
+              </div>
+
+              <div class="space-y-6">
+                <div>
+                  <div class="flex justify-between mb-1">
+                    <span class="text-green-400 font-semibold">Easy</span>
+                    <span class="text-gray-400 text-sm" id="lc-easy-label"
+                      >--</span
+                    >
+                  </div>
+                  <div class="w-full bg-gray-900/60 rounded-full h-3">
+                    <div
+                      id="lc-easy-bar"
+                      class="h-3 bg-green-500 rounded-full"
+                      style="width: 0%"
+                    ></div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="flex justify-between mb-1">
+                    <span class="text-yellow-400 font-semibold">Medium</span>
+                    <span class="text-gray-400 text-sm" id="lc-medium-label"
+                      >--</span
+                    >
+                  </div>
+                  <div class="w-full bg-gray-900/60 rounded-full h-3">
+                    <div
+                      id="lc-medium-bar"
+                      class="h-3 bg-yellow-500 rounded-full"
+                      style="width: 0%"
+                    ></div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="flex justify-between mb-1">
+                    <span class="text-red-400 font-semibold">Hard</span>
+                    <span class="text-gray-400 text-sm" id="lc-hard-label"
+                      >--</span
+                    >
+                  </div>
+                  <div class="w-full bg-gray-900/60 rounded-full h-3">
+                    <div
+                      id="lc-hard-bar"
+                      class="h-3 bg-red-500 rounded-full"
+                      style="width: 0%"
+                    ></div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
+          -->
+
           <br />
           <br />
         </div>
       </div>
     </div>
-
     <script src="matrix.js"></script>
   </body>
 </html>

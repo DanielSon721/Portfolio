@@ -42,11 +42,49 @@ html, body {
   padding: 0.75rem;
   border-radius: 0.5rem;
   transition: all 0.3s ease;
+  min-height: 140px;
+  display: grid;
+  grid-auto-rows: max-content;
+  align-content: center;
+  justify-items: center;
+  text-align: center;
+  gap: 0.25rem;
+  position: relative;
+  overflow: hidden;
 }
 
 .course-tile:hover {
-  transform: scale(1.02);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transform: scale(1.08);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  align-content: start;
+  padding-top: 1rem;
+}
+
+.course-tile h4 {
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.course-tile p {
+  max-height: 0;
+  opacity: 0;
+  margin-top: 0;
+  overflow: hidden;
+  transform: translateY(8px);
+  transition: max-height 0.3s ease, opacity 0.2s ease, margin-top 0.3s ease, transform 0.3s ease;
+}
+
+.course-tile:hover p {
+  max-height: 200px;
+  opacity: 1;
+  margin-top: 0.15rem;
+  transform: translateY(0);
+}
+
+.course-tile:hover h4 {
+  transform: translateY(-10px);
 }
 
 /* Force Tailwind Overrides */
