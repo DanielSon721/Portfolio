@@ -41,7 +41,6 @@ html, body {
   background-color: rgba(55, 65, 81, 0.7);
   padding: 0.75rem;
   border-radius: 0.5rem;
-  transition: all 0.3s ease;
   min-height: 140px;
   display: grid;
   grid-auto-rows: max-content;
@@ -51,40 +50,36 @@ html, body {
   gap: 0.25rem;
   position: relative;
   overflow: hidden;
-}
-
-.course-tile:hover {
-  transform: scale(1.08);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-  align-content: start;
-  padding-top: 1rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .course-tile h4 {
   margin: 0;
   width: 100%;
   text-align: center;
-  transition: transform 0.3s ease;
+  transition: transform 0.25s ease;
 }
 
 .course-tile p {
-  max-height: 0;
+  margin: 0;
   opacity: 0;
-  margin-top: 0;
+  max-height: 0;
   overflow: hidden;
-  transform: translateY(8px);
-  transition: max-height 0.3s ease, opacity 0.2s ease, margin-top 0.3s ease, transform 0.3s ease;
+  transition: opacity 0.25s ease, max-height 0.25s ease;
 }
 
-.course-tile:hover p {
-  max-height: 200px;
-  opacity: 1;
-  margin-top: 0.15rem;
-  transform: translateY(0);
+.course-tile:hover {
+  transform: translateY(-4px);
 }
 
 .course-tile:hover h4 {
-  transform: translateY(-10px);
+  transform: none;
+}
+
+.course-tile:hover p {
+  opacity: 1;
+  max-height: 6rem;
+  margin-top: 0.25rem;
 }
 
 /* Force Tailwind Overrides */
