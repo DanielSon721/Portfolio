@@ -134,6 +134,87 @@ canvas {
   min-width: 300px;  /* Minimum width on tiny screens */
 }
 
+.toolkit-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.toolkit-accordion-item {
+  background-color: rgba(31, 41, 55, 0.7);
+  border: 1px solid rgba(57, 255, 20, 0.14);
+  border-radius: 0.9rem;
+  padding: 0.8rem 1rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.toolkit-accordion-item:hover {
+  border-color: rgba(57, 255, 20, 0.45);
+  box-shadow: 0 10px 25px rgba(57, 255, 20, 0.16);
+}
+
+.toolkit-accordion-item[open] {
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.toolkit-accordion-item[open]:hover {
+  border-color: rgba(57, 255, 20, 0.45);
+  box-shadow: 0 10px 25px rgba(57, 255, 20, 0.16);
+}
+
+.toolkit-accordion-item summary {
+  list-style: none;
+  cursor: default;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.toolkit-accordion-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.toolkit-summary {
+  gap: 0.75rem;
+}
+
+.accordion-toggle {
+  margin-left: auto;
+  width: 2.1rem;
+  height: 2.1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 1px solid rgba(57, 255, 20, 0.45);
+  background: rgba(57, 255, 20, 0.1);
+  color: #39ff14;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.accordion-toggle:hover {
+  transform: scale(1.05);
+  border-color: rgba(57, 255, 20, 0.75);
+  box-shadow: 0 6px 15px rgba(57, 255, 20, 0.22);
+  background: rgba(57, 255, 20, 0.18);
+}
+
+.skill-pill {
+  display: inline-block;
+  background-color: rgba(55, 65, 81, 0.85);
+  padding: 0.3rem 0.65rem;
+  border-radius: 0.55rem;
+  font-size: 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
 .github-link {
   position: absolute;
   top: 1rem;

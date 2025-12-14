@@ -100,189 +100,148 @@
           <div class="flex flex-col lg:flex-row gap-8 mb-8">
             <!-- Toolkit on the left (narrower) -->
             <div class="lg:w-1/3 text-left">
-              <h2 class="text-3xl font-bold mb-6">💼 My Toolkit</h2>
+              <h2 class="text-3xl font-bold mb-2">💼 My Toolkit</h2>
+              <p class="text-gray-400 mb-4"></p>
 
-              <!-- Skills Section -->
-              <div class="space-y-4">
-                <div>
-                  <h3 class="text-xl font-semibold mb-2">Languages</h3>
-                  <div class="flex flex-wrap gap-2">
-                    <span class="text-sm bg-gray-700 px-2 py-1 rounded"
-                      >Python</span
+              <div class="toolkit-accordion">
+                <details class="toolkit-accordion-item" open>
+                  <summary class="toolkit-summary">
+                    <span>Languages</span>
+                    <button
+                      type="button"
+                      class="accordion-toggle"
+                      aria-label="Toggle Languages"
                     >
-                    <span class="text-sm bg-gray-700 px-2 py-1 rounded"
-                      >SQL</span
-                    >
-                    <span class="text-sm bg-gray-700 px-2 py-1 rounded"
-                      >Java</span
-                    >
-                    <span class="text-sm bg-gray-700 px-2 py-1 rounded">C</span>
-                    <span class="text-sm bg-gray-700 px-2 py-1 rounded"
-                      >C#</span
-                    >
-                    <span class="text-sm bg-gray-700 px-2 py-1 rounded"
-                      >Rust</span
-                    >
-                    <span class="text-sm bg-gray-700 px-2 py-1 rounded"
-                      >OCaml</span
-                    >
-                    <span class="text-sm bg-gray-700 px-2 py-1 rounded"
-                      >Assembly</span
-                    >
-                    <span class="text-sm bg-gray-700 px-2 py-1 rounded">R</span>
-                    <span class="text-sm bg-gray-700 px-2 py-1 rounded"
-                      >LaTeX</span
-                    >
+                      +
+                    </button>
+                  </summary>
+                  <div class="flex flex-wrap gap-2 mt-3">
+                    <span class="skill-pill">Python</span>
+                    <span class="skill-pill">SQL</span>
+                    <span class="skill-pill">Java</span>
+                    <span class="skill-pill">C</span>
+                    <span class="skill-pill">C#</span>
+                    <span class="skill-pill">Rust</span>
+                    <span class="skill-pill">OCaml</span>
+                    <span class="skill-pill">Assembly</span>
+                    <span class="skill-pill">R</span>
+                    <span class="skill-pill">LaTeX</span>
                   </div>
-                </div>
+                </details>
 
-                <div>
-                  <h3 class="text-xl font-semibold mb-2">Operating Systems</h3>
-                  <div class="flex flex-wrap gap-2">
-                    <span class="text-sm bg-gray-700 px-2 py-1 rounded"
-                      >macOS</span
+                <details class="toolkit-accordion-item">
+                  <summary class="toolkit-summary">
+                    <span>Operating Systems</span>
+                    <button
+                      type="button"
+                      class="accordion-toggle"
+                      aria-label="Toggle Operating Systems"
                     >
-                    <span class="text-sm bg-gray-700 px-2 py-1 rounded"
-                      >Windows</span
-                    >
-                    <span class="text-sm bg-gray-700 px-2 py-1 rounded"
-                      >Linux</span
-                    >
-                    <span class="text-sm bg-gray-700 px-2 py-1 rounded"
-                      >Kali Linux</span
-                    >
+                      +
+                    </button>
+                  </summary>
+                  <div class="flex flex-wrap gap-2 mt-3">
+                    <span class="skill-pill">macOS</span>
+                    <span class="skill-pill">Windows</span>
+                    <span class="skill-pill">Linux</span>
+                    <span class="skill-pill">Kali Linux</span>
                   </div>
-                </div>
+                </details>
 
-                <div>
-                  <h3 class="text-xl font-semibold mb-2">
-                    Cybersecurity Tools
-                  </h3>
-                  <div class="flex flex-wrap gap-2">
-                    <span class="text-sm bg-gray-700 px-2 py-1 rounded"
-                      >Nmap</span
+                <details class="toolkit-accordion-item">
+                  <summary class="toolkit-summary">
+                    <span>Cybersecurity Tools</span>
+                    <button
+                      type="button"
+                      class="accordion-toggle"
+                      aria-label="Toggle Cybersecurity Tools"
                     >
-                    <span class="text-sm bg-gray-700 px-2 py-1 rounded"
-                      >Hydra</span
-                    >
-                    <span class="text-sm bg-gray-700 px-2 py-1 rounded"
-                      >Gobuster</span
-                    >
-                    <span class="text-sm bg-gray-700 px-2 py-1 rounded"
-                      >tcpdump</span
-                    >
-                    <span class="text-sm bg-gray-700 px-2 py-1 rounded"
-                      >Wireshark</span
-                    >
-                    <span class="text-sm bg-gray-700 px-2 py-1 rounded"
-                      >Burpsuite</span
-                    >
-                    <span class="text-sm bg-gray-700 px-2 py-1 rounded"
-                      >VMware</span
-                    >
+                      +
+                    </button>
+                  </summary>
+                  <div class="flex flex-wrap gap-2 mt-3">
+                    <span class="skill-pill">Nmap</span>
+                    <span class="skill-pill">Hydra</span>
+                    <span class="skill-pill">Gobuster</span>
+                    <span class="skill-pill">tcpdump</span>
+                    <span class="skill-pill">Wireshark</span>
+                    <span class="skill-pill">Burpsuite</span>
+                    <span class="skill-pill">VMware</span>
                   </div>
-                </div>
+                </details>
 
-                <div>
-                  <h3 class="text-xl font-semibold mb-2">Dev Tools</h3>
-                  <div class="flex flex-wrap gap-2">
-                    <span class="text-sm bg-gray-700 px-2 py-1 rounded"
-                      >GitHub</span
+                <details class="toolkit-accordion-item">
+                  <summary class="toolkit-summary">
+                    <span>Developer Tools</span>
+                    <button
+                      type="button"
+                      class="accordion-toggle"
+                      aria-label="Toggle Dev Tools"
                     >
-                    <span class="text-sm bg-gray-700 px-2 py-1 rounded"
-                      >Docker</span
-                    >
-                    <span class="text-sm bg-gray-700 px-2 py-1 rounded"
-                      >VSCode</span
-                    >
-                    <span class="text-sm bg-gray-700 px-2 py-1 rounded"
-                      >Unity</span
-                    >
-                    <span class="text-sm bg-gray-700 px-2 py-1 rounded"
-                      >MATLAB</span
-                    >
-                    <span class="text-sm bg-gray-700 px-2 py-1 rounded"
-                      >RStudio</span
-                    >
-                    <span class="text-sm bg-gray-700 px-2 py-1 rounded"
-                      >JUnit</span
-                    >
-                    <span class="text-sm bg-gray-700 px-2 py-1 rounded"
-                      >gdb</span
-                    >
-                    <span class="text-sm bg-gray-700 px-2 py-1 rounded"
-                      >Valgrind</span
-                    >
-                    <span class="text-sm bg-gray-700 px-2 py-1 rounded"
-                      >Dune</span
-                    >
+                      +
+                    </button>
+                  </summary>
+                  <div class="flex flex-wrap gap-2 mt-3">
+                    <span class="skill-pill">GitHub</span>
+                    <span class="skill-pill">Docker</span>
+                    <span class="skill-pill">VSCode</span>
+                    <span class="skill-pill">Unity</span>
+                    <span class="skill-pill">MATLAB</span>
+                    <span class="skill-pill">RStudio</span>
+                    <span class="skill-pill">JUnit</span>
+                    <span class="skill-pill">gdb</span>
+                    <span class="skill-pill">Valgrind</span>
+                    <span class="skill-pill">Dune</span>
                   </div>
-                </div>
+                </details>
 
-                <div>
-                  <h3 class="text-xl font-semibold mb-2">Libraries</h3>
-                  <div class="flex flex-wrap gap-2">
-                    <span class="text-sm bg-gray-700 px-2 py-1 rounded"
-                      >Flask</span
+                <details class="toolkit-accordion-item">
+                  <summary class="toolkit-summary">
+                    <span>Libraries</span>
+                    <button
+                      type="button"
+                      class="accordion-toggle"
+                      aria-label="Toggle Libraries"
                     >
-                    <span class="text-sm bg-gray-700 px-2 py-1 rounded"
-                      >BreezySwing</span
-                    >
-                    <span class="text-sm bg-gray-700 px-2 py-1 rounded"
-                      >pandas</span
-                    >
-                    <span class="text-sm bg-gray-700 px-2 py-1 rounded"
-                      >NumPy</span
-                    >
-                    <span class="text-sm bg-gray-700 px-2 py-1 rounded"
-                      >scikit-learn</span
-                    >
-                    <span class="text-sm bg-gray-700 px-2 py-1 rounded"
-                      >PyTorch</span
-                    >
-                    <span class="text-sm bg-gray-700 px-2 py-1 rounded"
-                      >Regex</span
-                    >
-                    <span class="text-sm bg-gray-700 px-2 py-1 rounded"
-                      >Tidyverse</span
-                    >
-                    <span class="text-sm bg-gray-700 px-2 py-1 rounded"
-                      >Matplotlib</span
-                    >
-                    <span class="text-sm bg-gray-700 px-2 py-1 rounded"
-                      >Seaborn</span
-                    >
+                      +
+                    </button>
+                  </summary>
+                  <div class="flex flex-wrap gap-2 mt-3">
+                    <span class="skill-pill">Flask</span>
+                    <span class="skill-pill">BreezySwing</span>
+                    <span class="skill-pill">pandas</span>
+                    <span class="skill-pill">NumPy</span>
+                    <span class="skill-pill">scikit-learn</span>
+                    <span class="skill-pill">PyTorch</span>
+                    <span class="skill-pill">Regex</span>
+                    <span class="skill-pill">Tidyverse</span>
+                    <span class="skill-pill">Matplotlib</span>
+                    <span class="skill-pill">Seaborn</span>
                   </div>
-                </div>
+                </details>
 
-                <div>
-                  <h3 class="text-xl font-semibold mb-2">Other</h3>
-                  <div class="flex flex-wrap gap-2">
-                    <span class="text-sm bg-gray-700 px-2 py-1 rounded"
-                      >Incident Response</span
+                <details class="toolkit-accordion-item">
+                  <summary class="toolkit-summary">
+                    <span>Other</span>
+                    <button
+                      type="button"
+                      class="accordion-toggle"
+                      aria-label="Toggle Other"
                     >
-                    <span class="text-sm bg-gray-700 px-2 py-1 rounded"
-                      >Network Analysis</span
-                    >
-                    <span class="text-sm bg-gray-700 px-2 py-1 rounded"
-                      >Risk Management</span
-                    >
-                    <span class="text-sm bg-gray-700 px-2 py-1 rounded"
-                      >Prompt Engineering</span
-                    >
-                    <span class="text-sm bg-gray-700 px-2 py-1 rounded"
-                      >Automation</span
-                    >
-                    <span class="text-sm bg-gray-700 px-2 py-1 rounded"
-                      >Data analysis</span
-                    >
-                    <span class="text-sm bg-gray-700 px-2 py-1 rounded"
-                      >Machine learning</span
-                    >
+                      +
+                    </button>
+                  </summary>
+                  <div class="flex flex-wrap gap-2 mt-3">
+                    <span class="skill-pill">Incident Response</span>
+                    <span class="skill-pill">Network Analysis</span>
+                    <span class="skill-pill">Risk Management</span>
+                    <span class="skill-pill">Prompt Engineering</span>
+                    <span class="skill-pill">Automation</span>
+                    <span class="skill-pill">Data analysis</span>
+                    <span class="skill-pill">Machine learning</span>
                   </div>
-                </div>
+                </details>
               </div>
-
               <!-- Certifications-->
               <div class="mt-8">
                 <h2 class="text-3xl font-bold mb-6">📜 Certifications</h2>
@@ -894,5 +853,32 @@
       </div>
     </div>
     <script src="matrix.js"></script>
+    <script>
+      const toolkitDetails = document.querySelectorAll(
+        ".toolkit-accordion-item"
+      );
+      toolkitDetails.forEach((details) => {
+        const summary = details.querySelector(".toolkit-summary");
+        const toggleBtn = details.querySelector(".accordion-toggle");
+        const syncButton = () => {
+          toggleBtn.textContent = details.open ? "-" : "+";
+        };
+        syncButton();
+
+        summary.addEventListener("click", (e) => {
+          if (!e.target.classList.contains("accordion-toggle")) {
+            e.preventDefault();
+          }
+        });
+
+        toggleBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          details.open = !details.open;
+          syncButton();
+        });
+
+        details.addEventListener("toggle", syncButton);
+      });
+    </script>
   </body>
 </html>
