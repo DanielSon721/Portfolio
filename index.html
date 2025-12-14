@@ -115,7 +115,7 @@
                       +
                     </button>
                   </summary>
-                  <div class="flex flex-wrap gap-2 mt-3">
+                  <div class="accordion-panel flex flex-wrap gap-2 mt-3">
                     <span class="skill-pill">Python</span>
                     <span class="skill-pill">SQL</span>
                     <span class="skill-pill">Java</span>
@@ -140,7 +140,7 @@
                       +
                     </button>
                   </summary>
-                  <div class="flex flex-wrap gap-2 mt-3">
+                  <div class="accordion-panel flex flex-wrap gap-2 mt-3">
                     <span class="skill-pill">macOS</span>
                     <span class="skill-pill">Windows</span>
                     <span class="skill-pill">Linux</span>
@@ -159,7 +159,7 @@
                       +
                     </button>
                   </summary>
-                  <div class="flex flex-wrap gap-2 mt-3">
+                  <div class="accordion-panel flex flex-wrap gap-2 mt-3">
                     <span class="skill-pill">Nmap</span>
                     <span class="skill-pill">Hydra</span>
                     <span class="skill-pill">Gobuster</span>
@@ -181,7 +181,7 @@
                       +
                     </button>
                   </summary>
-                  <div class="flex flex-wrap gap-2 mt-3">
+                  <div class="accordion-panel flex flex-wrap gap-2 mt-3">
                     <span class="skill-pill">GitHub</span>
                     <span class="skill-pill">Docker</span>
                     <span class="skill-pill">VSCode</span>
@@ -206,7 +206,7 @@
                       +
                     </button>
                   </summary>
-                  <div class="flex flex-wrap gap-2 mt-3">
+                  <div class="accordion-panel flex flex-wrap gap-2 mt-3">
                     <span class="skill-pill">Flask</span>
                     <span class="skill-pill">BreezySwing</span>
                     <span class="skill-pill">pandas</span>
@@ -231,7 +231,7 @@
                       +
                     </button>
                   </summary>
-                  <div class="flex flex-wrap gap-2 mt-3">
+                  <div class="accordion-panel flex flex-wrap gap-2 mt-3">
                     <span class="skill-pill">Incident Response</span>
                     <span class="skill-pill">Network Analysis</span>
                     <span class="skill-pill">Risk Management</span>
@@ -860,8 +860,9 @@
       toolkitDetails.forEach((details) => {
         const summary = details.querySelector(".toolkit-summary");
         const toggleBtn = details.querySelector(".accordion-toggle");
-        const syncButton = () => {
-          toggleBtn.textContent = details.open ? "-" : "+";
+        const panel = details.querySelector(".accordion-panel");
+        const syncButton = (isOpen = details.hasAttribute("open")) => {
+          toggleBtn.textContent = isOpen ? "-" : "+";
         };
         syncButton();
 
@@ -871,13 +872,69 @@
           }
         });
 
+        const animateDetails = (targetOpen) => {
+          if (!panel || details.classList.contains("is-animating")) {
+            return;
+          }
+
+          details.classList.add("is-animating");
+
+          if (targetOpen) {
+            details.setAttribute("open", "");
+            const startHeight = panel.scrollHeight;
+            panel.style.height = "0px";
+            panel.style.opacity = "0";
+            panel.style.transform = "translateY(-6px)";
+
+            requestAnimationFrame(() => {
+              panel.style.height = `${startHeight}px`;
+              panel.style.opacity = "1";
+              panel.style.transform = "translateY(0)";
+            });
+
+            panel.addEventListener(
+              "transitionend",
+              () => {
+                panel.style.height = "";
+                details.classList.remove("is-animating");
+              },
+              { once: true }
+            );
+          } else {
+            const startHeight = panel.scrollHeight;
+            panel.style.height = `${startHeight}px`;
+            panel.style.opacity = "1";
+            panel.style.transform = "translateY(0)";
+
+            requestAnimationFrame(() => {
+              panel.style.height = "0px";
+              panel.style.opacity = "0";
+              panel.style.transform = "translateY(-6px)";
+            });
+
+            panel.addEventListener(
+              "transitionend",
+              () => {
+                details.removeAttribute("open");
+                panel.style.height = "";
+                details.classList.remove("is-animating");
+              },
+              { once: true }
+            );
+          }
+        };
+
         toggleBtn.addEventListener("click", (e) => {
           e.stopPropagation();
-          details.open = !details.open;
-          syncButton();
+          e.preventDefault();
+          const willOpen = !details.hasAttribute("open");
+          syncButton(willOpen);
+          animateDetails(willOpen);
         });
 
-        details.addEventListener("toggle", syncButton);
+        details.addEventListener("toggle", () =>
+          syncButton(details.hasAttribute("open"))
+        );
       });
     </script>
   </body>

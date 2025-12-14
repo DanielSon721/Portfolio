@@ -206,6 +206,20 @@ canvas {
   background: rgba(57, 255, 20, 0.18);
 }
 
+.accordion-panel {
+  overflow: hidden;
+  height: auto;
+  opacity: 1;
+  transform: translateY(0);
+  transition: height 0.32s ease, opacity 0.26s ease, transform 0.32s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .accordion-panel {
+    transition: none;
+  }
+}
+
 .skill-pill {
   display: inline-block;
   background-color: rgba(55, 65, 81, 0.85);
