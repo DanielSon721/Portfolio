@@ -167,7 +167,7 @@ canvas {
 .favorite-star {
   position: absolute;
   top: 2px;
-  right: 14px;
+  right: 17px;
   font-size: 1.9rem;
   color: #facc15;
   text-shadow: 0 0 8px rgba(250, 204, 21, 0.65), 0 0 16px rgba(250, 204, 21, 0.25);
