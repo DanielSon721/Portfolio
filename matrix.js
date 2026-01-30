@@ -81,6 +81,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const HOVER_ZONE_Y = 48;    // px from top that triggers reveal
     let hoverHideTimeout;
     let isPointerInHeader = false;
+    let navActive = false;
+
+    const setNavActive = (active) => {
+      navActive = active;
+      scrollHeader.classList.toggle("nav-active", active);
+    };
 
     const showHeader = () => {
       clearTimeout(hoverHideTimeout);
@@ -94,8 +100,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const updateForScroll = () => {
       if (window.scrollY > SCROLL_SHOW_Y) {
         showHeader();
+        setNavActive(false);
       } else if (!isPointerInHeader) {
         hideHeader();
+        setNavActive(false);
       }
     };
 
@@ -107,13 +115,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (nearTop || inHeaderBounds) {
         showHeader();
+        setNavActive(true);
       } else if (window.scrollY <= SCROLL_SHOW_Y) {
         clearTimeout(hoverHideTimeout);
         hoverHideTimeout = setTimeout(() => {
           if (window.scrollY <= SCROLL_SHOW_Y && !isPointerInHeader) {
             hideHeader();
+            setNavActive(false);
           }
         }, 0);
+      } else {
+        setNavActive(false);
       }
     };
 

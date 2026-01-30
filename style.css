@@ -419,7 +419,7 @@ canvas {
   align-items: center;
   flex-wrap: wrap;
   gap: 0.9rem;
-  transition: gap 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+  transition: gap 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
 .matrix-link {
@@ -442,7 +442,7 @@ canvas {
 .link-text {
   display: inline-block;
   max-width: 10rem;
-  transition: opacity 0.18s ease, max-width 0.22s ease, transform 0.18s ease;
+  transition: opacity 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), max-width 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
 .nav-icon {
@@ -478,33 +478,35 @@ canvas {
 
 /* Compact header behavior */
 .matrix-header:hover,
-.matrix-header:focus-within {
+.matrix-header:focus-within,
+.matrix-header.nav-active {
   padding: 0.75rem 1.5rem;
 }
 
 .matrix-header:hover .matrix-nav,
-.matrix-header:focus-within .matrix-nav {
+.matrix-header:focus-within .matrix-nav,
+.matrix-header.nav-active .matrix-nav {
   gap: 1.1rem;
 }
 
-.matrix-header:not(:hover) .matrix-link {
+.matrix-header:not(:hover):not(.nav-active) .matrix-link {
   padding: 0.35rem;
   max-width: 2.55rem;
   justify-content: center;
 }
 
-.matrix-header:not(:hover) .link-text {
+.matrix-header:not(:hover):not(.nav-active) .link-text {
   opacity: 0;
   max-width: 0;
   transform: translateX(-6px);
   overflow: hidden;
 }
 
-.matrix-header:not(:hover) .matrix-nav {
+.matrix-header:not(:hover):not(.nav-active) .matrix-nav {
   gap: 0.55rem;
 }
 
-.matrix-header:not(:hover) .matrix-glow {
+.matrix-header:not(:hover):not(.nav-active) .matrix-glow {
   opacity: 0.8;
 }
 
@@ -589,7 +591,7 @@ canvas {
     width: auto;
   }
 
-  .matrix-header:not(:hover) .link-text {
+  .matrix-header:not(:hover):not(.nav-active) .link-text {
     opacity: 1;
     max-width: 12rem;
     transform: none;
