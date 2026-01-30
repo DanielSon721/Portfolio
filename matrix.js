@@ -77,17 +77,51 @@ function showCopiedMessage(message) {
 document.addEventListener("DOMContentLoaded", () => {
   const scrollHeader = document.getElementById("scroll-header");
   if (scrollHeader) {
-    if (window.scrollY > 100) {
-      scrollHeader.classList.add("visible");
-    }
+    const SCROLL_SHOW_Y = 60;   // show earlier on scroll
+    const HOVER_ZONE_Y = 48;    // px from top that triggers reveal
+    let hoverHideTimeout;
+    let isPointerInHeader = false;
 
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 100) {
-        scrollHeader.classList.add("visible");
-      } else {
-        scrollHeader.classList.remove("visible");
+    const showHeader = () => {
+      clearTimeout(hoverHideTimeout);
+      scrollHeader.classList.add("visible");
+    };
+
+    const hideHeader = () => {
+      scrollHeader.classList.remove("visible");
+    };
+
+    const updateForScroll = () => {
+      if (window.scrollY > SCROLL_SHOW_Y) {
+        showHeader();
+      } else if (!isPointerInHeader) {
+        hideHeader();
       }
-    });
+    };
+
+    const handleMouseMove = (e) => {
+      const rect = scrollHeader.getBoundingClientRect();
+      const inHeaderBounds = e.clientY >= rect.top && e.clientY <= rect.bottom;
+      const nearTop = e.clientY <= HOVER_ZONE_Y;
+      isPointerInHeader = inHeaderBounds;
+
+      if (nearTop || inHeaderBounds) {
+        showHeader();
+      } else if (window.scrollY <= SCROLL_SHOW_Y) {
+        clearTimeout(hoverHideTimeout);
+        hoverHideTimeout = setTimeout(() => {
+          if (window.scrollY <= SCROLL_SHOW_Y && !isPointerInHeader) {
+            hideHeader();
+          }
+        }, 0);
+      }
+    };
+
+    // Initial state
+    updateForScroll();
+
+    window.addEventListener("scroll", updateForScroll);
+    document.addEventListener("mousemove", handleMouseMove);
   }
 
   // PDF viewer handling for writing.html
