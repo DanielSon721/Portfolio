@@ -315,7 +315,7 @@ canvas {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
   z-index: 50;
   transform: translateY(-100%);
-  transition: transform 0.22s ease-out;
+  transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), padding 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
   overflow: hidden;
   border-bottom: 1.5px solid #39ff14;
   display: flex;
@@ -419,15 +419,16 @@ canvas {
   align-items: center;
   flex-wrap: wrap;
   gap: 0.9rem;
-  transition: gap 0.2s ease;
+  transition: gap 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
 .matrix-link {
   color: #39ff14;
   text-decoration: none;
   padding: 0.4rem 0.75rem;
+  max-width: 12rem;
   text-shadow: 0 0 2px #39ff14;
-  transition: opacity 0.18s ease, max-width 0.22s ease, transform 0.18s ease, text-shadow 0.3s ease, padding 0.2s ease, gap 0.2s ease, color 0.2s ease;
+  transition: opacity 0.22s ease, max-width 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.22s ease, text-shadow 0.32s ease, padding 0.28s cubic-bezier(0.22, 0.61, 0.36, 1), gap 0.28s ease, color 0.22s ease;
   white-space: nowrap;
   display: inline-flex;
   align-items: center;
@@ -488,7 +489,7 @@ canvas {
 
 .matrix-header:not(:hover) .matrix-link {
   padding: 0.35rem;
-  width: 2.55rem;
+  max-width: 2.55rem;
   justify-content: center;
 }
 
@@ -509,7 +510,7 @@ canvas {
 
 .matrix-header:focus-within .matrix-link {
   padding: 0.45rem 0.75rem;
-  width: auto;
+  max-width: 12rem;
 }
 
 .matrix-header:focus-within .link-text {
