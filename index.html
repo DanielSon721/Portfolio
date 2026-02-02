@@ -1,6 +1,6 @@
 <!--index.html-->
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -44,7 +44,9 @@
         <a href="projects.html" class="matrix-link">
           <span class="nav-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24">
-              <path d="M10 3v4l-4 9a5 5 0 0 0 4.6 7h2.8A5 5 0 0 0 18 16l-4-9V3" />
+              <path
+                d="M10 3v4l-4 9a5 5 0 0 0 4.6 7h2.8A5 5 0 0 0 18 16l-4-9V3"
+              />
               <path d="M8 13h8" />
             </svg>
           </span>
@@ -335,7 +337,12 @@
                 <div
                   class="project-card bg-gray-800/70 p-4 rounded-lg hover:scale-[1.02] transition-transform flex flex-col h-full"
                 >
-                  <span class="favorite-star" aria-hidden="true" title="Favorite">★</span>
+                  <span
+                    class="favorite-star"
+                    aria-hidden="true"
+                    title="Favorite"
+                    >★</span
+                  >
                   <a
                     href="https://github.com/DanielSon721/Portfolio"
                     target="_blank"
@@ -479,7 +486,12 @@
                 <div
                   class="project-card bg-gray-800/70 p-4 rounded-lg hover:scale-[1.02] transition-transform flex flex-col h-full"
                 >
-                  <span class="favorite-star" aria-hidden="true" title="Favorite">★</span>
+                  <span
+                    class="favorite-star"
+                    aria-hidden="true"
+                    title="Favorite"
+                    >★</span
+                  >
                   <a
                     href="https://github.com/DanielSon721/Bittorent"
                     target="_blank"
@@ -504,7 +516,12 @@
                 <div
                   class="project-card bg-gray-800/70 p-4 rounded-lg hover:scale-[1.02] transition-transform flex flex-col h-full"
                 >
-                  <span class="favorite-star" aria-hidden="true" title="Favorite">★</span>
+                  <span
+                    class="favorite-star"
+                    aria-hidden="true"
+                    title="Favorite"
+                    >★</span
+                  >
                   <a
                     href="https://github.com/DanielSon721/Slime-Skirmish"
                     target="_blank"
@@ -742,7 +759,9 @@
 
                 <div class="course-tile math-course">
                   <h4 class="font-semibold">Applications of Linear Algebra</h4>
-                  <p class="text-sm text-gray-400 mt-1">Physics applications</p>
+                  <p class="text-sm text-gray-400 mt-1">
+                    Physics applications, linear optimization, Markov matrices
+                  </p>
                 </div>
               </div>
             </div>
@@ -892,7 +911,7 @@
     <script src="matrix.js"></script>
     <script>
       const toolkitDetails = document.querySelectorAll(
-        ".toolkit-accordion-item"
+        ".toolkit-accordion-item",
       );
       toolkitDetails.forEach((details) => {
         const summary = details.querySelector(".toolkit-summary");
@@ -935,7 +954,7 @@
                 panel.style.height = "";
                 details.classList.remove("is-animating");
               },
-              { once: true }
+              { once: true },
             );
           } else {
             const startHeight = panel.scrollHeight;
@@ -956,7 +975,7 @@
                 panel.style.height = "";
                 details.classList.remove("is-animating");
               },
-              { once: true }
+              { once: true },
             );
           }
         };
@@ -970,7 +989,7 @@
         });
 
         details.addEventListener("toggle", () =>
-          syncButton(details.hasAttribute("open"))
+          syncButton(details.hasAttribute("open")),
         );
       });
     </script>
