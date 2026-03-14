@@ -57,7 +57,27 @@ html, body {
   gap: 0.25rem;
   position: relative;
   overflow: hidden;
+  border: 1px solid rgba(57, 255, 20, 0.12);
+  box-shadow: inset 0 0 0 1px rgba(57, 255, 20, 0.04);
   transition: transform 0.32s ease, box-shadow 0.32s ease;
+}
+
+.course-tile:not(.locked-course)::before {
+  content: "UNLOCKED";
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  padding: 0.18rem 0.48rem;
+  border: 1px solid rgba(57, 255, 20, 0.4);
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.8);
+  color: rgba(57, 255, 20, 0.82);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  opacity: 0.9;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
 }
 
 .course-tile h4 {
@@ -79,6 +99,13 @@ html, body {
 
 .course-tile:hover {
   transform: translateY(-4px);
+  box-shadow: inset 0 0 0 1px rgba(57, 255, 20, 0.12),
+    0 12px 24px rgba(0, 0, 0, 0.35);
+}
+
+.course-tile:not(.locked-course):hover::before {
+  opacity: 0;
+  transform: scale(0.85);
 }
 
 .course-tile:hover h4 {
@@ -91,6 +118,75 @@ html, body {
   max-height: 6rem;
   margin-top: 0.3rem;
   transition-delay: 0.08s; /* hover-in: wait briefly for title lift */
+}
+
+.course-tile.locked-course {
+  background:
+    linear-gradient(135deg, rgba(17, 24, 39, 0.95), rgba(15, 23, 42, 0.92)),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(148, 163, 184, 0.08) 0 10px,
+      transparent 10px 20px
+    );
+  border: 1px dashed rgba(148, 163, 184, 0.4);
+  box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.08),
+    0 12px 24px rgba(0, 0, 0, 0.35);
+}
+
+.course-tile.locked-course::before {
+  content: "LOCKED";
+  position: absolute;
+  top: 0.7rem;
+  right: 0.7rem;
+  padding: 0.18rem 0.48rem;
+  border: 1px solid rgba(148, 163, 184, 0.38);
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.85);
+  color: rgba(226, 232, 240, 0.82);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.course-tile.locked-course::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 18%,
+    rgba(148, 163, 184, 0.06) 35%,
+    transparent 52%
+  );
+  pointer-events: none;
+}
+
+.course-tile.locked-course h4 {
+  padding-top: 1.15rem;
+  color: rgba(226, 232, 240, 0.88);
+}
+
+.course-tile.locked-course p {
+  opacity: 1;
+  max-height: 4rem;
+  margin-top: 0.45rem;
+  color: #94a3b8;
+}
+
+.course-tile.locked-course:hover {
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.15),
+    0 16px 30px rgba(0, 0, 0, 0.42);
+}
+
+.course-tile.locked-course:hover h4 {
+  transform: none;
+}
+
+.course-tile.locked-course:hover p {
+  max-height: 4rem;
+  margin-top: 0.45rem;
+  transition-delay: 0s;
 }
 
 /* Force Tailwind Overrides */

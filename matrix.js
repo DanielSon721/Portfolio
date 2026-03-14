@@ -179,9 +179,9 @@ function filterCourses(category) {
   
   allCourses.forEach(course => {
     if (category === 'cs' && course.classList.contains('cs-course')) {
-      course.style.display = 'block';
+      course.style.display = '';
     } else if (category === 'math' && course.classList.contains('math-course')) {
-      course.style.display = 'block';
+      course.style.display = '';
     } else {
       course.style.display = 'none';
     }
