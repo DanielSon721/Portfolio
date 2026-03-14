@@ -169,7 +169,7 @@ function getSampleTitle(sample) {
 // Course filtering functionality
 function filterCourses(category) {
   // Update active button
-  document.querySelectorAll('.filter-btn').forEach(btn => {
+  document.querySelectorAll('.edu-filter-btn').forEach(btn => {
     btn.classList.remove('active');
   });
   document.getElementById(`${category}-btn`).classList.add('active');
