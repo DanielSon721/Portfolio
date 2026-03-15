@@ -178,9 +178,7 @@ function filterCourses(category) {
   const allCourses = document.querySelectorAll('.course-tile');
   
   allCourses.forEach(course => {
-    if (category === 'cs' && course.classList.contains('cs-course')) {
-      course.style.display = '';
-    } else if (category === 'math' && course.classList.contains('math-course')) {
+    if (course.classList.contains(`${category}-course`)) {
       course.style.display = '';
     } else {
       course.style.display = 'none';

@@ -69,10 +69,9 @@
             src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&pause=1500&color=FFFFFF&center=true&vCenter=true&width=500&
             lines=
             University+of+Maryland;
-            Cybersecurity+Enthusiast;
-            Software+Engineer;
-            Computer+Science+and+Mathematics;
-            ΣΦΔ"
+            Cybersecurity+and+Mathematics;
+            ΣΦΔ;
+            Incoming+Security+Intern+@+Somos"
             alt="Typing Animation"
           />
         </div>
@@ -158,7 +157,7 @@
                     <span class="skill-pill">C#</span>
                     <span class="skill-pill">Rust</span>
                     <span class="skill-pill">OCaml</span>
-                    <span class="skill-pill">Assembly</span>
+                    <span class="skill-pill">MIPS Assembly</span>
                     <span class="skill-pill">R</span>
                     <span class="skill-pill">LaTeX</span>
                   </div>
@@ -669,7 +668,7 @@
             <h2 class="text-3xl font-bold mb-6 text-center">🎓 Education</h2>
             <div class="max-w-6xl mx-auto">
               <h3 class="text-xl font-bold mb-4 text-center">
-                University of Maryland - Computer Science and Mathematics
+                University of Maryland - Cybersecurity and Mathematics
               </h3>
 
               <br />
@@ -681,7 +680,7 @@
                   class="edu-filter-btn active"
                   onclick="filterCourses('cs')"
                 >
-                  Computer Science
+                  Cybersecurity
                 </button>
                 <button
                   id="math-btn"
@@ -689,6 +688,13 @@
                   onclick="filterCourses('math')"
                 >
                   Mathematics
+                </button>
+                <button
+                  id="other-btn"
+                  class="edu-filter-btn"
+                  onclick="filterCourses('other')"
+                >
+                  GenEd
                 </button>
               </div>
 
@@ -786,35 +792,42 @@
                 <div class="course-tile cs-course locked-course">
                   <h4 class="font-semibold">Artificial Intelligence</h4>
                   <p class="text-sm text-gray-400 mt-1">
-                    Planned course. Unlocks in Fall 2026.
+                    Unlocks in Fall 2026.
                   </p>
                 </div>
 
                 <div class="course-tile cs-course locked-course">
                   <h4 class="font-semibold">Machine Learning</h4>
                   <p class="text-sm text-gray-400 mt-1">
-                    Planned course. Unlocks in Fall 2026.
+                    Unlocks in Fall 2026.
                   </p>
                 </div>
 
                 <div class="course-tile cs-course locked-course">
                   <h4 class="font-semibold">Computer Architecture</h4>
                   <p class="text-sm text-gray-400 mt-1">
-                    Planned course. Unlocks in Fall 2026.
+                    Unlocks in Fall 2026.
                   </p>
                 </div>
 
                 <div class="course-tile cs-course locked-course">
                   <h4 class="font-semibold">Operating Systems</h4>
                   <p class="text-sm text-gray-400 mt-1">
-                    Planned course. Unlocks in Spring 2027.
+                    Unlocks in Spring 2027.
+                  </p>
+                </div>
+
+                <div class="course-tile cs-course locked-course">
+                  <h4 class="font-semibold">Compilers</h4>
+                  <p class="text-sm text-gray-400 mt-1">
+                    Unlocks in Spring 2027.
                   </p>
                 </div>
 
                 <div class="course-tile cs-course locked-course">
                   <h4 class="font-semibold">Game Programming</h4>
                   <p class="text-sm text-gray-400 mt-1">
-                    Planned course. Unlocks in Spring 2027.
+                    Unlocks in Spring 2027.
                   </p>
                 </div>
 
@@ -882,14 +895,129 @@
                 <div class="course-tile math-course locked-course">
                   <h4 class="font-semibold">Real Analysis II</h4>
                   <p class="text-sm text-gray-400 mt-1">
-                    Planned course. Unlocks in Fall 2026.
+                    Unlocks in Fall 2026.
                   </p>
                 </div>
 
                 <div class="course-tile math-course locked-course">
-                  <h4 class="font-semibold">MATH4XX</h4>
+                  <h4 class="font-semibold">TBD</h4>
                   <p class="text-sm text-gray-400 mt-1">
-                    TBD course. Unlocks in a future semester.
+                    Unlocks in Spring 2027
+                  </p>
+                </div>
+
+                <!-- Other Courses -->
+                <div class="course-tile other-course">
+                  <h4 class="font-semibold">Astronomy</h4>
+                  <p class="text-sm text-gray-400 mt-1">
+                    Stars, planets, galaxies, the universe
+                  </p>
+                </div>
+
+                <div class="course-tile other-course">
+                  <h4 class="font-semibold">Microeconomics</h4>
+                  <p class="text-sm text-gray-400 mt-1">
+                    Markets, incentives, supply and demand
+                  </p>
+                </div>
+
+                <div class="course-tile other-course">
+                  <h4 class="font-semibold">Philosophy</h4>
+                  <p class="text-sm text-gray-400 mt-1">
+                    Ethics, logic, argumentation
+                  </p>
+                </div>
+
+                <div class="course-tile other-course">
+                  <h4 class="font-semibold">Academic Writing</h4>
+                  <p class="text-sm text-gray-400 mt-1">
+                    Research, rhetoric, analytical writing
+                  </p>
+                </div>
+
+                <div class="course-tile other-course">
+                  <h4 class="font-semibold">Professional Writing</h4>
+                  <p class="text-sm text-gray-400 mt-1">
+                    Workplace communication and formal writing
+                  </p>
+                </div>
+
+                <div class="course-tile other-course">
+                  <h4 class="font-semibold">Communications</h4>
+                  <p class="text-sm text-gray-400 mt-1">
+                    Public speaking and interpersonal communication
+                  </p>
+                </div>
+
+                <div class="course-tile other-course">
+                  <h4 class="font-semibold">The New Jim Crow</h4>
+                  <p class="text-sm text-gray-400 mt-1">
+                    Race, incarceration, the justice system
+                  </p>
+                </div>
+
+                <div class="course-tile other-course">
+                  <h4 class="font-semibold">Urban Agriculture</h4>
+                  <p class="text-sm text-gray-400 mt-1">
+                    Sustainable food systems and city farming
+                  </p>
+                </div>
+
+                <div class="course-tile other-course">
+                  <h4 class="font-semibold">
+                    World Popular Musics and Identity
+                  </h4>
+                  <p class="text-sm text-gray-400 mt-1">
+                    Global music, culture, identity
+                  </p>
+                </div>
+
+                <div class="course-tile other-course">
+                  <h4 class="font-semibold">AP U.S. History</h4>
+                  <p class="text-sm text-gray-400 mt-1">
+                    American political, social, and cultural history
+                  </p>
+                </div>
+
+                <div class="course-tile other-course">
+                  <h4 class="font-semibold">AP Environmental Science</h4>
+                  <p class="text-sm text-gray-400 mt-1">
+                    Ecosystems, sustainability, environmental policy
+                  </p>
+                </div>
+
+                <div class="course-tile other-course">
+                  <h4 class="font-semibold">AP Physics C: Mechanics</h4>
+                  <p class="text-sm text-gray-400 mt-1">
+                    Motion, forces, energy, calculus-based mechanics
+                  </p>
+                </div>
+
+                <div class="course-tile other-course">
+                  <h4 class="font-semibold">AP Psychology</h4>
+                  <p class="text-sm text-gray-400 mt-1">
+                    Behavior, cognition, psychological theory
+                  </p>
+                </div>
+
+                <div class="course-tile other-course">
+                  <h4 class="font-semibold">AP Statistics</h4>
+                  <p class="text-sm text-gray-400 mt-1">
+                    Distributions, experiment design, statistical analysis
+                  </p>
+                </div>
+
+                <div class="course-tile other-course locked-course">
+                  <h4 class="font-semibold">Korean</h4>
+                  <p class="text-sm text-gray-400 mt-1">
+                    Unlocks in Fall 2026.
+                  </p>
+                </div>
+
+                <div class="course-tile other-course locked-course">
+                  <h4 class="font-semibold">Asian Americans and Media</h4>
+                  <p class="text-sm text-gray-400 mt-1">
+                    Unlocks in Spring 2027.
                   </p>
                 </div>
               </div>
